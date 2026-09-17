@@ -1,0 +1,2155 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+  <head>
+    <link rel="shortcut icon" href="./evoralogo0.jpg" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Évora for Perfume | إيفورا للعطور</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                emerald: "#0F2E23",
+                emeraldDark: "#0A2118",
+                gold: "#D4AF37",
+                goldLight: "#F3E5AB",
+                goldDark: "#B5922F",
+                cream: "#F9F8F6",
+                blackDark: "#121212",
+              },
+            },
+
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+              amiri: ["Amiri", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      .animate-float {
+        animation: float 3.5s ease-in-out infinite;
+      }
+
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: #0a2118;
+        color: #f9f8f6;
+      }
+
+      .font-serif-custom {
+        font-family: "Amiri", serif;
+      }
+
+      .gold-gradient-text {
+        background: linear-gradient(
+          135deg,
+          #f3e5ab 0%,
+          #d4af37 50%,
+          #b5922f 100%
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .gold-border-gradient {
+        border-image: linear-gradient(to bottom, #d4af37, #0f2e23) 1;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-brand-emeraldDark text-brand-cream selection:bg-brand-gold selection:text-brand-emeraldDark"
+  >
+    <!-- =========================================================
+         HEADER & NAVIGATION
+    ========================================================== -->
+
+    <header
+      class="fixed w-full top-0 z-50 bg-brand-emeraldDark/90 backdrop-blur-md border-b border-brand-gold/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div
+            class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center bg-brand-emerald text-brand-gold group-hover:scale-105 transition-transform"
+          >
+            <i class="fa-solid font-bold text-xl">É</i>
+          </div>
+
+          <div>
+            <span
+              class="block font-serif-custom text-2xl font-bold tracking-wider gold-gradient-text"
+            >
+              ÉVORA
+            </span>
+
+            <span
+              class="block text-[10px] tracking-widest text-brand-goldLight/70 uppercase"
+            >
+              For Perfume
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+          <a href="#hero" class="hover:text-brand-gold transition-colors">
+            الرئيسية
+          </a>
+
+          <a href="#quiz" class="hover:text-brand-gold transition-colors">
+            اكتشف عطرك
+          </a>
+
+          <a
+            href="#bestsellers"
+            class="hover:text-brand-gold transition-colors"
+          >
+            الأكثر طلبًا
+          </a>
+
+          <a href="#signature" class="hover:text-brand-gold transition-colors">
+            عطر مضاوي
+          </a>
+
+          <a href="#reviews" class="hover:text-brand-gold transition-colors">
+            آراء العملاء
+          </a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-4">
+          <a
+            id="header-whatsapp"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hidden sm:inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark font-bold px-4 py-2 rounded-full text-sm transition-all shadow-lg hover:shadow-brand-gold/20"
+          >
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>اطلب الآن</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menu-btn"
+            type="button"
+            class="md:hidden text-brand-gold text-2xl p-2 focus:outline-none"
+            aria-label="فتح القائمة"
+          >
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-brand-emerald border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3 font-semibold text-center"
+      >
+        <a
+          href="#hero"
+          class="block py-2 hover:text-brand-gold border-b border-brand-gold/10"
+        >
+          الرئيسية
+        </a>
+
+        <a
+          href="#quiz"
+          class="block py-2 hover:text-brand-gold border-b border-brand-gold/10"
+        >
+          اكتشف عطرك
+        </a>
+
+        <a
+          href="#bestsellers"
+          class="block py-2 hover:text-brand-gold border-b border-brand-gold/10"
+        >
+          الأكثر طلبًا
+        </a>
+
+        <a
+          href="#signature"
+          class="block py-2 hover:text-brand-gold border-b border-brand-gold/10"
+        >
+          عطر مضاوي
+        </a>
+
+        <a
+          href="#reviews"
+          class="block py-2 hover:text-brand-gold border-b border-brand-gold/10"
+        >
+          آراء العملاء
+        </a>
+
+        <a
+          id="mobile-whatsapp"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 w-full bg-brand-gold text-brand-emeraldDark font-bold py-2.5 rounded-full mt-2"
+        >
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>تواصل معنا عبر الواتساب</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         SECTION 1: HERO
+    ========================================================== -->
+
+    <section
+      id="hero"
+      class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-cover bg-center bg-no-repeat"
+      style="background-image: url(&quot;./evora.jpeg&quot;)"
+    >
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-brand-emeraldDark/90 via-brand-emeraldDark/80 to-brand-emeraldDark/95"
+      ></div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12"
+      >
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <!-- Text -->
+          <div class="space-y-6 text-center md:text-right order-1">
+            <h1
+              class="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif-custom leading-tight"
+            >
+              <span class="gold-gradient-text block mb-2">
+                Évora for Perfume
+              </span>
+
+              <span class="text-white"> عطرك... بصمتك </span>
+            </h1>
+
+            <p class="text-brand-cream/80 text-base sm:text-lg leading-relaxed">
+              في Évora نؤمن إن العطر مش مجرد رائحة... العطر حضور، شخصية، وذكرى
+              بتفضل موجودة.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 pt-2"
+            >
+              <a
+                href="#quiz"
+                class="w-full sm:w-auto px-6 py-3 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark text-sm font-extrabold flex items-center justify-center gap-2 transition-all shadow-md shadow-brand-gold/20 hover:scale-105"
+              >
+                <span>اكتشف عطرك المناسب</span>
+                <i class="fa-solid fa-arrow-left text-xs"></i>
+              </a>
+
+              <a
+                href="#bestsellers"
+                class="w-full sm:w-auto px-6 py-3 rounded-full border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-sm font-bold flex items-center justify-center gap-2 transition-all hover:bg-brand-gold/10"
+              >
+                <span>تصفح الأكثر طلبًا</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="relative flex justify-center order-2">
+            <div
+              class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-brand-gold/20 to-transparent p-2"
+            >
+              <img
+                src="./Évora (2).jpg"
+                alt="Evora Luxury Perfume"
+                class="w-full h-full object-cover rounded-full shadow-2xl border-2 border-brand-gold/40"
+              />
+            </div>
+
+            <!-- Floating Card -->
+            <div
+              class="absolute -bottom-4 right-4 sm:right-10 bg-brand-emerald/90 backdrop-blur-md p-4 rounded-2xl border border-brand-gold/30 shadow-xl flex items-center gap-3 animate-float"
+            >
+              <div
+                class="w-12 h-12 bg-brand-gold/20 rounded-xl flex items-center justify-center text-brand-gold"
+              >
+                <i class="fa-solid fa-award text-2xl"></i>
+              </div>
+
+              <div>
+                <p class="text-xs text-brand-gold font-bold">جودة المكونات</p>
+
+                <p class="text-sm font-semibold text-white">زيوت عطريّة نقية</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <div
+            class="pt-8 grid grid-cols-3 sm:grid-cols-3 gap-4 border-t border-brand-gold/20 text-center order-3 md:col-span-2"
+          >
+            <div class="space-y-2 flex flex-col items-center justify-center">
+              <i class="fa-solid fa-truck-fast text-brand-gold text-xl"></i>
+              <p class="text-xs text-brand-cream/80">توصيل لجميع المحافظات</p>
+            </div>
+
+            <div class="space-y-2 flex flex-col items-center justify-center">
+              <i class="fa-solid fa-pump-soap text-brand-gold text-xl"></i>
+              <p class="text-xs text-brand-cream/80">عطور مختارة بعناية</p>
+            </div>
+
+            <div class="space-y-2 flex flex-col items-center justify-center">
+              <i class="fa-brands fa-whatsapp text-brand-gold text-xl"></i>
+              <p class="text-xs text-brand-cream/80">طلب عبر واتساب</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 2: PERFUME QUIZ
+    ========================================================== -->
+
+    <section id="quiz" class="py-20 bg-brand-emerald relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+          <span
+            class="text-brand-gold font-bold tracking-widest text-xs sm:text-sm uppercase block"
+          >
+            اكتشف عطرك
+          </span>
+
+          <h2
+            class="text-2xl sm:text-4xl font-bold font-serif-custom text-white"
+          >
+            عطرك المناسب يبدأ بـ 3 أسئلة
+          </h2>
+
+          <p class="text-brand-cream/80 text-xs sm:text-sm leading-relaxed">
+            جاوب على 3 أسئلة بسيطة، وإحنا نساعدك تلاقي العطر الأقرب لذوقك.
+          </p>
+
+          <div class="w-20 h-0.5 bg-brand-gold mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Quiz Card -->
+        <div
+          class="bg-brand-emeraldDark/90 border border-brand-gold/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative min-h-[420px] flex flex-col justify-between"
+        >
+          <!-- Progress -->
+          <div class="space-y-2 mb-8">
+            <div
+              class="flex justify-between items-center text-xs text-brand-gold font-bold"
+            >
+              <span id="step-indicator-text"> السؤال 1 من 3 </span>
+            </div>
+
+            <div
+              class="w-full bg-brand-emerald h-2 rounded-full overflow-hidden border border-brand-gold/10"
+            >
+              <div
+                id="progress-bar-fill"
+                class="bg-brand-gold h-full w-1/3 transition-all duration-300 ease-out"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Quiz Steps -->
+          <div id="quiz-steps-wrapper" class="relative flex-grow">
+            <!-- Step 1 -->
+            <div
+              id="step-1"
+              class="quiz-step-content space-y-6 transition-all duration-300"
+            >
+              <h3
+                class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
+              >
+                لمن تبحث عن العطر؟
+              </h3>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto"
+              >
+                <button
+                  type="button"
+                  onclick="selectOptionUI(1, this)"
+                  class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-user-tie text-brand-gold"></i>
+                  <span>رجالي</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(1, this)"
+                  class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-crown text-brand-gold"></i>
+                  <span>نسائي</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(1, this)"
+                  class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i
+                    class="fa-solid fa-wand-magic-sparkles text-brand-gold"
+                  ></i>
+
+                  <span>يونيسكس</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              id="step-2"
+              class="quiz-step-content hidden space-y-6 transition-all duration-300"
+            >
+              <h3
+                class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
+              >
+                أي طابع عطري تفضّل؟
+              </h3>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto"
+              >
+                <button
+                  type="button"
+                  onclick="selectOptionUI(2, this)"
+                  class="opt-btn-2 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-moon text-brand-gold"></i>
+                  <span>شرقي وعودي</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(2, this)"
+                  class="opt-btn-2 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-tree text-brand-gold"></i>
+                  <span>خشبي ودافئ</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(2, this)"
+                  class="opt-btn-2 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-leaf text-brand-gold"></i>
+                  <span>منعش وحيوي</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(2, this)"
+                  class="opt-btn-2 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-spa text-brand-gold"></i>
+                  <span>زهري وحلو</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              id="step-3"
+              class="quiz-step-content hidden space-y-6 transition-all duration-300"
+            >
+              <h3
+                class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
+              >
+                إيه الإحساس اللي بتحبه في عطرك؟
+              </h3>
+
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto"
+              >
+                <button
+                  type="button"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-gem text-brand-gold"></i>
+                  <span>أنيق وراقي</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-fire text-brand-gold"></i>
+                  <span>جريء ولافت</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-wind text-brand-gold"></i>
+                  <span>منعش وخفيف</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-eye text-brand-gold"></i>
+                  <span>دافئ وغامض</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz Result -->
+            <div
+              id="quiz-result-step"
+              class="hidden text-center space-y-6 pt-4"
+            >
+              <div
+                class="inline-block p-3 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold"
+              >
+                <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
+              </div>
+
+              <div>
+                <span
+                  class="text-xs text-brand-gold font-bold tracking-widest uppercase"
+                >
+                  ترشيحنا ليك
+                </span>
+
+                <h3
+                  class="text-2xl sm:text-3xl font-bold font-serif-custom gold-gradient-text mt-1"
+                >
+                  اسم العطر المرشح
+                </h3>
+
+                <p
+                  class="text-xs sm:text-sm text-brand-cream/80 max-w-md mx-auto mt-2 leading-relaxed"
+                >
+                  وصف مختصر جدًا للعطر المختار والمناسب لتفضيلاتك.
+                </p>
+              </div>
+
+              <div
+                class="pt-2 flex flex-col sm:flex-row gap-3 justify-center items-center"
+              >
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-full sm:w-auto px-8 py-3 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark text-sm font-extrabold flex items-center justify-center gap-2 transition-all shadow-lg"
+                >
+                  <i class="fa-brands fa-whatsapp text-lg"></i>
+                  <span>اطلبه عبر واتساب</span>
+                </a>
+
+                <button
+                  type="button"
+                  onclick="restartQuizUI()"
+                  class="text-xs text-brand-goldLight hover:underline pt-2 sm:pt-0 flex items-center justify-center gap-1 mx-auto"
+                >
+                  <span>إعادة الاختبار</span>
+                  <i class="fa-solid fa-rotate-right text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz Navigation -->
+          <div
+            id="quiz-navigation"
+            class="pt-8 border-t border-brand-gold/10 flex items-center justify-between mt-auto"
+          >
+            <button
+              id="prev-btn"
+              type="button"
+              onclick="prevStepUI()"
+              class="invisible text-xs sm:text-sm text-brand-cream/70 hover:text-brand-gold flex items-center gap-1.5 transition-colors"
+            >
+              <span>السابق</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+
+            <button
+              id="next-btn"
+              type="button"
+              onclick="nextStepUI()"
+              disabled
+              class="px-6 py-2.5 rounded-full bg-brand-gold/30 text-brand-emeraldDark text-xs sm:text-sm font-extrabold cursor-not-allowed transition-all shadow-md flex items-center justify-center gap-1"
+            >
+              <span>التالي</span>
+              <i class="fa-solid fa-arrow-left text-xs"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         QUIZ JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+      /* =========================================================
+         GLOBAL WHATSAPP
+      ========================================================== */
+
+      const WHATSAPP_PHONE = "201223925069";
+
+      /* =========================================================
+         HEADER WHATSAPP
+      ========================================================== */
+
+      const headerWhatsapp = document.getElementById("header-whatsapp");
+
+      const mobileWhatsapp = document.getElementById("mobile-whatsapp");
+
+      const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}`;
+
+      if (headerWhatsapp) {
+        headerWhatsapp.href = whatsappUrl;
+      }
+
+      if (mobileWhatsapp) {
+        mobileWhatsapp.href = whatsappUrl;
+      }
+
+      /* =========================================================
+         MOBILE MENU
+      ========================================================== */
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      if (menuBtn && mobileMenu && menuIcon) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+
+          const isOpen = !mobileMenu.classList.contains("hidden");
+
+          menuIcon.className = isOpen
+            ? "fa-solid fa-xmark"
+            : "fa-solid fa-bars";
+        });
+      }
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+
+          menuIcon.className = "fa-solid fa-bars";
+        });
+      });
+
+      /* =========================================================
+         QUIZ STATE
+      ========================================================== */
+
+      let currentStep = 1;
+
+      const quizAnswers = {
+        gender: null,
+        family: [],
+        feeling: [],
+      };
+
+      const selectedElements = {
+        1: null,
+        2: null,
+        3: null,
+      };
+
+      /* =========================================================
+         QUIZ MAPS
+      ========================================================== */
+
+      const GENDER_MAP = {
+        رجالي: "رجالي",
+        نسائي: "نسائي",
+        يونيسكس: "يونيسكس",
+      };
+
+      const FAMILY_MAP = {
+        "شرقي وعودي": ["شرقي", "عودي"],
+        "خشبي ودافئ": ["خشبي"],
+        "منعش وحيوي": ["منعش"],
+        "زهري وحلو": ["زهري", "حلو"],
+      };
+
+      const FEELING_MAP = {
+        "أنيق وراقي": ["شرقي", "زهري"],
+        "جريء ولافت": ["دخاني", "عودي"],
+        "منعش وخفيف": ["منعش"],
+        "دافئ وغامض": ["خشبي", "حلو"],
+      };
+
+      /* =========================================================
+         PERFUMES DATA
+      ========================================================== */
+
+      const perfumesList = [
+        {
+          id: "erba-pura",
+          name: "إيربابورا زيرجوف",
+          latin: "Erba Pura",
+          desc: "يفتتح العطر بانفجار من الفواكه الحمضية المشرقة، ثم يتحول إلى قلب فاكهي حلو، قبل أن يستقر على قاعدة مسكية عنبرية ثابتة.",
+          gender: "يونيسكس",
+          families: ["حلو", "منعش", "شرقي"],
+          tier: "premium",
+        },
+
+        {
+          id: "sweet-banana",
+          name: "سويت بنانا",
+          latin: "Sweet Banana",
+          desc: "عطر حلو وفاكهي بطابع دافئ وناعم، مناسب لمن يفضل الروائح السكرية والجذابة.",
+          gender: "نسائي",
+          families: ["حلو", "زهري"],
+          tier: "standard",
+        },
+
+        {
+          id: "sauvage-dior",
+          name: "سوفاج ديور",
+          latin: "Sauvage",
+          desc: "افتتاحية حادة ومنعشة من البرغموت والفلفل، يتبعها قلب عطري متوازن، ثم قاعدة من الأمبروكسان الترابي القوي.",
+          gender: "رجالي",
+          families: ["منعش", "خشبي"],
+          tier: "standard",
+        },
+
+        {
+          id: "desire-blue",
+          name: "ديزاير بلو",
+          latin: "Desire Blue",
+          desc: "عطر مائي منعش بافتتاحية حمضية، يتطور إلى قلب عطري أنيق، وينتهي بقاعدة خشبية مسكية ناعمة.",
+          gender: "رجالي",
+          families: ["منعش", "خشبي"],
+          tier: "standard",
+        },
+
+        {
+          id: "silver-scent",
+          name: "سلفر سنت",
+          latin: "Silver Scent",
+          desc: "بداية حمضية أروماتية نظيفة، قلب من الخزامى والتوابل الخفيفة، وقاعدة خشبية مسكية أنيقة.",
+          gender: "رجالي",
+          families: ["منعش", "خشبي"],
+          tier: "standard",
+        },
+
+        {
+          id: "amir-aloud",
+          name: "أمير العود",
+          latin: "Amir Al Oud",
+          desc: "عطر شرقي فخم يبدأ بتوابل دافئة، ثم قلب من الورد والعود، ويستقر على قاعدة عميقة من العود والمسك.",
+          gender: "يونيسكس",
+          families: ["عودي", "شرقي", "خشبي"],
+          tier: "standard",
+        },
+
+        {
+          id: "bleu-de-chanel",
+          name: "بلو دي شانيل",
+          latin: "Bleu de Chanel",
+          desc: "افتتاحية حمضية جافة، قلب من الجريب فروت وخشب الأرز، وقاعدة دخانية خشبية راقية.",
+          gender: "رجالي",
+          families: ["خشبي", "دخاني", "منعش"],
+          tier: "premium",
+        },
+
+        {
+          id: "madawi",
+          name: "مضاوي من العربية للعود",
+          latin: "Madawi",
+          desc: "عطر شرقي زهري فاخر يبدأ بالفواكه والزعفران، ثم قلب من الورد والياسمين، وينتهي بقاعدة عودية مسكية.",
+          gender: "يونيسكس",
+          families: ["شرقي", "زهري", "عودي"],
+          tier: "premium",
+        },
+
+        {
+          id: "pacific-chill",
+          name: "باسيفيك تشيل",
+          latin: "Pacific Chill",
+          desc: "عطر منعش نابض بالحياة يفتتح بالحمضيات والفواكه الخضراء، مع قلب من البطيخ والنعناع.",
+          gender: "يونيسكس",
+          families: ["منعش", "حلو"],
+          tier: "standard",
+        },
+
+        {
+          id: "khamrah",
+          name: "خمرة",
+          latin: "Khamrah",
+          desc: "عطر شرقي حلو ودافئ يفتتح بالقرفة والتمر، ثم قلب من البخور وزهر البرتقال، وقاعدة من الفانيليا.",
+          gender: "يونيسكس",
+          families: ["شرقي", "حلو"],
+          tier: "standard",
+        },
+
+        {
+          id: "khamrah-qahwa",
+          name: "خمرة قهوة",
+          latin: "Khamrah Qahwa",
+          desc: "نسخة أدفأ وأكثر إدماناً من خمرة، بافتتاحية قهوة وتوابل، قلب من التمر والعسل، وقاعدة فانيليا.",
+          gender: "يونيسكس",
+          families: ["شرقي", "حلو"],
+          tier: "standard",
+        },
+
+        {
+          id: "oud-bouquet",
+          name: "عود بوكيه",
+          latin: "Oud Bouquet",
+          desc: "مزيج شرقي زهري يبدأ بالزعفران والفواكه، وقلب من الورد الدمشقي، وقاعدة عودية غنية.",
+          gender: "يونيسكس",
+          families: ["عودي", "زهري", "شرقي"],
+          tier: "premium",
+        },
+      ];
+
+      /* =========================================================
+         QUIZ SELECTION
+      ========================================================== */
+
+      function handleQuizSelection(step, valueText) {
+        if (step === 1) {
+          quizAnswers.gender = GENDER_MAP[valueText] || valueText;
+        }
+
+        if (step === 2) {
+          quizAnswers.family = FAMILY_MAP[valueText] || [valueText];
+        }
+
+        if (step === 3) {
+          quizAnswers.feeling = FEELING_MAP[valueText] || [valueText];
+        }
+      }
+
+      function selectOptionUI(step, element) {
+        selectedElements[step] = element;
+
+        const optionText = element.querySelector("span")
+          ? element.querySelector("span").textContent.trim()
+          : element.textContent.trim();
+
+        handleQuizSelection(step, optionText);
+
+        const buttons = document.querySelectorAll(`.opt-btn-${step}`);
+
+        buttons.forEach((btn) => {
+          btn.classList.remove(
+            "border-brand-gold",
+            "bg-brand-gold/10",
+            "text-brand-gold",
+          );
+
+          btn.classList.add(
+            "border-brand-gold/20",
+            "bg-brand-emerald/40",
+            "text-brand-cream",
+          );
+
+          const checkIcon = btn.querySelector(".check-icon");
+
+          if (checkIcon) {
+            checkIcon.classList.add("hidden");
+          }
+        });
+
+        element.classList.remove(
+          "border-brand-gold/20",
+          "bg-brand-emerald/40",
+          "text-brand-cream",
+        );
+
+        element.classList.add(
+          "border-brand-gold",
+          "bg-brand-gold/10",
+          "text-brand-gold",
+        );
+
+        const selectedCheck = element.querySelector(".check-icon");
+
+        if (selectedCheck) {
+          selectedCheck.classList.remove("hidden");
+        }
+
+        enableNextButton(true);
+      }
+
+      /* =========================================================
+         NEXT BUTTON
+      ========================================================== */
+
+      function enableNextButton(enable) {
+        const nextBtn = document.getElementById("next-btn");
+
+        if (enable) {
+          nextBtn.disabled = false;
+
+          nextBtn.classList.remove("bg-brand-gold/30", "cursor-not-allowed");
+
+          nextBtn.classList.add(
+            "bg-brand-gold",
+            "hover:bg-brand-goldDark",
+            "hover:scale-105",
+          );
+        } else {
+          nextBtn.disabled = true;
+
+          nextBtn.classList.add("bg-brand-gold/30", "cursor-not-allowed");
+
+          nextBtn.classList.remove(
+            "bg-brand-gold",
+            "hover:bg-brand-goldDark",
+            "hover:scale-105",
+          );
+        }
+      }
+
+      /* =========================================================
+         QUIZ HEADER
+      ========================================================== */
+
+      function updateQuizHeaderUI() {
+        const progressFill = document.getElementById("progress-bar-fill");
+
+        const indicatorText = document.getElementById("step-indicator-text");
+
+        const nextBtn = document.getElementById("next-btn");
+
+        const prevBtn = document.getElementById("prev-btn");
+
+        if (currentStep <= 3) {
+          indicatorText.textContent = `السؤال ${currentStep} من 3`;
+
+          const pct = Math.round((currentStep / 3) * 100);
+
+          progressFill.style.width = `${pct}%`;
+
+          if (currentStep === 1) {
+            prevBtn.classList.add("invisible");
+          } else {
+            prevBtn.classList.remove("invisible");
+          }
+
+          if (currentStep === 3) {
+            nextBtn.querySelector("span").textContent = "اكتشف عطري";
+
+            nextBtn.querySelector("i").className =
+              "fa-solid fa-wand-magic-sparkles text-xs mr-1";
+          } else {
+            nextBtn.querySelector("span").textContent = "التالي";
+
+            nextBtn.querySelector("i").className =
+              "fa-solid fa-arrow-left text-xs";
+          }
+
+          enableNextButton(Boolean(selectedElements[currentStep]));
+        }
+      }
+
+      /* =========================================================
+         NEXT STEP
+      ========================================================== */
+
+      function nextStepUI() {
+        if (currentStep < 3) {
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.add("hidden");
+
+          currentStep++;
+
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.remove("hidden");
+
+          updateQuizHeaderUI();
+
+          return;
+        }
+
+        if (currentStep === 3) {
+          const bestMatch = calculateScore(quizAnswers, perfumesList);
+
+          renderQuizResultUI(bestMatch);
+
+          document.getElementById("step-3").classList.add("hidden");
+
+          document
+            .getElementById("quiz-result-step")
+            .classList.remove("hidden");
+
+          document.getElementById("quiz-navigation").classList.add("hidden");
+
+          document.getElementById("step-indicator-text").textContent =
+            "اكتمل الاختبار ✨";
+
+          document.getElementById("progress-bar-fill").style.width = "100%";
+        }
+      }
+
+      /* =========================================================
+         PREVIOUS STEP
+      ========================================================== */
+
+      function prevStepUI() {
+        if (currentStep > 1) {
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.add("hidden");
+
+          currentStep--;
+
+          document
+            .getElementById(`step-${currentStep}`)
+            .classList.remove("hidden");
+
+          updateQuizHeaderUI();
+        }
+      }
+
+      /* =========================================================
+         RESTART QUIZ
+      ========================================================== */
+
+      function restartQuizUI() {
+        currentStep = 1;
+
+        selectedElements[1] = null;
+        selectedElements[2] = null;
+        selectedElements[3] = null;
+
+        quizAnswers.gender = null;
+        quizAnswers.family = [];
+        quizAnswers.feeling = [];
+
+        document.getElementById("quiz-result-step").classList.add("hidden");
+
+        document.getElementById("quiz-navigation").classList.remove("hidden");
+
+        document.getElementById("step-1").classList.remove("hidden");
+
+        document.getElementById("step-2").classList.add("hidden");
+
+        document.getElementById("step-3").classList.add("hidden");
+
+        document
+          .querySelectorAll(".quiz-step-content button")
+          .forEach((btn) => {
+            btn.classList.remove(
+              "border-brand-gold",
+              "bg-brand-gold/10",
+              "text-brand-gold",
+            );
+
+            btn.classList.add(
+              "border-brand-gold/20",
+              "bg-brand-emerald/40",
+              "text-brand-cream",
+            );
+
+            const checkIcon = btn.querySelector(".check-icon");
+
+            if (checkIcon) {
+              checkIcon.classList.add("hidden");
+            }
+          });
+
+        updateQuizHeaderUI();
+      }
+
+      /* =========================================================
+         SCORING
+      ========================================================== */
+
+      const WEIGHTS = {
+        GENDER_MATCH: 3,
+        FAMILY_MATCH: 3,
+        FEELING_MATCH: 2,
+        TIER_PREMIUM_BONUS: 0.5,
+      };
+
+      function calculateScore(answers, list) {
+        if (!list || list.length === 0) {
+          return null;
+        }
+
+        let bestMatch = null;
+        let highestScore = -1;
+
+        list.forEach((perfume) => {
+          let currentScore = 0;
+
+          /* Gender */
+          if (
+            perfume.gender === answers.gender ||
+            perfume.gender === "يونيسكس" ||
+            answers.gender === "يونيسكس"
+          ) {
+            currentScore += WEIGHTS.GENDER_MATCH;
+          }
+
+          /* Family */
+          if (
+            Array.isArray(perfume.families) &&
+            Array.isArray(answers.family)
+          ) {
+            const hasFamilyMatch = answers.family.some((f) =>
+              perfume.families.includes(f),
+            );
+
+            if (hasFamilyMatch) {
+              currentScore += WEIGHTS.FAMILY_MATCH;
+            }
+          }
+
+          /* Feeling */
+          if (
+            Array.isArray(perfume.families) &&
+            Array.isArray(answers.feeling)
+          ) {
+            const hasFeelingMatch = answers.feeling.some((f) =>
+              perfume.families.includes(f),
+            );
+
+            if (hasFeelingMatch) {
+              currentScore += WEIGHTS.FEELING_MATCH;
+            }
+          }
+
+          /* Premium bonus */
+          if (perfume.tier === "premium") {
+            currentScore += WEIGHTS.TIER_PREMIUM_BONUS;
+          }
+
+          if (currentScore > highestScore) {
+            highestScore = currentScore;
+
+            bestMatch = {
+              ...perfume,
+              score: currentScore,
+            };
+          }
+        });
+
+        return bestMatch;
+      }
+
+      /* =========================================================
+         QUIZ RESULT
+      ========================================================== */
+
+      function renderQuizResultUI(perfume) {
+        if (!perfume) return;
+
+        const titleEl = document.querySelector("#quiz-result-step h3");
+
+        const descEl = document.querySelector("#quiz-result-step p");
+
+        const whatsappBtn = document.querySelector("#quiz-result-step a");
+
+        if (titleEl) {
+          titleEl.textContent =
+            perfume.name + (perfume.latin ? ` (${perfume.latin})` : "");
+        }
+
+        if (descEl) {
+          descEl.textContent = perfume.desc;
+        }
+
+        if (whatsappBtn) {
+          const message = `مرحباً، قمت باختبار العطور على الموقع الخاص بكم وتم ترشيح عطر Évora (${perfume.name}) لي. أرغب في الاستفسار عن تفاصيله وطلبه.`;
+
+          const encodedMsg = encodeURIComponent(message);
+
+          whatsappBtn.href = `https://wa.me/${WHATSAPP_PHONE}?text=${encodedMsg}`;
+
+          whatsappBtn.target = "_blank";
+        }
+      }
+    </script>
+
+    <!-- =========================================================
+         SECTION 3: BESTSELLERS
+    ========================================================== -->
+
+    <section
+      id="bestsellers"
+      class="py-16 px-4 max-w-7xl mx-auto border-t border-brand-gold/10"
+    >
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span
+          class="text-brand-gold font-medium text-sm tracking-widest uppercase mb-2 block"
+        >
+          اختيارات عملائنا المفضلة
+        </span>
+
+        <h2
+          class="text-3xl md:text-4xl font-bold text-brand-cream mb-4 font-serif"
+        >
+          الأكثر طلبًا
+        </h2>
+
+        <p class="text-brand-cream/70 text-sm md:text-base leading-relaxed">
+          تشكيلة استثنائية حازت على إعجاب عشاق العطور، مصممة بعناية لتمنحك
+          حضورًا لا يُنسى.
+        </p>
+      </div>
+
+      <!-- Products Grid -->
+      <div
+        id="bestsellers-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
+      ></div>
+
+      <!-- Quiz CTA -->
+      <div
+        class="mt-16 text-center bg-brand-emerald/30 border border-brand-gold/20 rounded-2xl p-8 max-w-2xl mx-auto backdrop-blur-sm"
+      >
+        <i class="fa-solid fa-sparkles text-brand-gold text-2xl mb-3 block"></i>
+
+        <h3 class="text-xl font-bold text-brand-cream mb-2">
+          مش عارف تختار العطر المناسب؟
+        </h3>
+
+        <p class="text-brand-cream/70 text-sm mb-6">
+          دع مستشارنا العطري المساعد يوجهك للرائحة التي تعبر عن شخصيتك وطابعك
+          الخاص خلال ثوانٍ.
+        </p>
+
+        <a
+          href="#quiz"
+          class="inline-flex items-center gap-2 bg-brand-gold text-brand-emeraldDark px-6 py-3 rounded-xl font-bold text-sm hover:bg-brand-goldDark transition-all duration-300 hover:scale-105 shadow-lg shadow-brand-gold/10"
+        >
+          <span>اكتشف عطرك المناسب</span>
+          <i class="fa-solid fa-arrow-left text-xs"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         BESTSELLERS JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+      const BESTSELLER_IDS = [
+        "madawi",
+        "silver-scent",
+        "sweet-banana",
+        "amir-aloud",
+      ];
+
+      const bestsellersData = [
+        {
+          id: "madawi",
+          name: "مضاوي من العربية للعود",
+          latin: "Madawi",
+          gender: "يونيسكس",
+          desc: "عطر شرقي زهري فاخر يبدأ بالفواكه والزعفران، ثم قلب من الورد والياسمين، وينتهي بقاعدة عودية مسكية.",
+          image: "./midawi.jpg",
+        },
+
+        {
+          id: "silver-scent",
+          name: "سلفر سنت",
+          latin: "Silver Scent",
+          gender: "رجالي",
+          desc: "بداية حمضية أروماتية نظيفة، قلب من الخزامى والتوابل الخفيفة، وقاعدة خشبية مسكية أنيقة.",
+          image: "./silver.jpeg",
+        },
+
+        {
+          id: "sweet-banana",
+          name: "سويت بنانا",
+          latin: "Sweet Banana",
+          gender: "نسائي",
+          desc: "مزيج فاكهي استوائي ساحر يجمع بين حلاوة الموز والفانيليا الناعمة مع لمسات زهرية خفيفة.",
+          image:
+            "https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=600&q=80",
+        },
+
+        {
+          id: "amir-aloud",
+          name: "أمير العود",
+          latin: "Amir Al Oud",
+          gender: "يونيسكس",
+          desc: "عطر شرقي فخم يبدأ بتوابل دافئة، ثم قلب من الورد والعود، ويستقر على قاعدة عميقة من العود والمسك.",
+          image:
+            "https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80",
+        },
+      ];
+
+      function renderBestsellersUI() {
+        const gridContainer = document.getElementById("bestsellers-grid");
+
+        if (!gridContainer) return;
+
+        const itemsToRender = bestsellersData.map((item) => {
+          const foundInMainList =
+            typeof perfumesList !== "undefined"
+              ? perfumesList.find((p) => p.id === item.id)
+              : null;
+
+          return {
+            ...item,
+            ...(foundInMainList || {}),
+          };
+        });
+
+        gridContainer.innerHTML = itemsToRender
+          .map((perfume) => {
+            const message = `مرحبًا، أرغب في طلب عطر ${perfume.name}.`;
+
+            const encodedMessage = encodeURIComponent(message);
+
+            const waLink =
+              "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodedMessage;
+
+            return `
+                <div
+                  class="group bg-brand-emerald/20 border border-brand-gold/20 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-brand-gold/50 hover:bg-brand-emerald/40 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-brand-gold/5"
+                >
+
+                  <div>
+
+                    <div
+                      class="relative overflow-hidden aspect-square bg-brand-emerald/40"
+                    >
+
+                      <img
+                        src="${perfume.image}"
+                        alt="${perfume.name}"
+                        class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                        loading="lazy"
+                      />
+
+                      <span
+                        class="absolute top-3 right-3 bg-brand-emeraldDark/80 border border-brand-gold/30 text-brand-gold text-xs px-2.5 py-1 rounded-full backdrop-blur-md"
+                      >
+                        ${perfume.gender}
+                      </span>
+
+                    </div>
+
+                    <div class="p-5">
+
+                      <h3
+                        class="text-lg font-bold text-brand-cream mb-1 group-hover:text-brand-gold transition-colors duration-200"
+                      >
+                        ${perfume.name}
+                      </h3>
+
+                      ${
+                        perfume.latin
+                          ? `
+                            <p
+                              class="text-xs text-brand-gold/70 mb-3 font-mono"
+                            >
+                              ${perfume.latin}
+                            </p>
+                          `
+                          : ""
+                      }
+
+                      <p
+                        class="text-brand-cream/70 text-xs leading-relaxed line-clamp-3 mb-4"
+                      >
+                        ${perfume.desc}
+                      </p>
+
+                    </div>
+
+                  </div>
+
+                  <div
+                    class="p-5 pt-0 mt-auto"
+                  >
+
+                    <a
+                      href="${waLink}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="w-full flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark font-bold py-2.5 px-4 rounded-xl text-xs md:text-sm transition-all duration-300 shadow-md hover:shadow-brand-gold/10 active:scale-95"
+                    >
+                      <i
+                        class="fa-brands fa-whatsapp text-base"
+                      ></i>
+
+                      <span>
+                        اطلب عبر واتساب
+                      </span>
+                    </a>
+
+                  </div>
+
+                </div>
+              `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", renderBestsellersUI);
+    </script>
+
+    <!-- =========================================================
+         SECTION 4: SIGNATURE PRODUCT
+    ========================================================== -->
+
+    <section id="signature" class="py-20 bg-brand-emerald relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Title -->
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <span
+            class="text-brand-gold font-bold tracking-widest text-sm uppercase"
+          >
+            العطر الأيقوني
+          </span>
+
+          <h2
+            class="text-3xl sm:text-4xl font-bold font-serif-custom text-white"
+          >
+            مضاوي (MIDAW) — بصمة من نور
+          </h2>
+
+          <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <!-- Product -->
+          <div
+            class="bg-brand-emeraldDark/60 rounded-3xl p-6 sm:p-8 border border-brand-gold/30 space-y-8"
+          >
+            <!-- Product Image -->
+            <div class="relative group overflow-hidden rounded-2xl">
+              <img
+                src="./midawi.jpg"
+                alt="عطر مضاوي"
+                class="w-full h-[320px] sm:h-[380px] object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
+              />
+
+              <div
+                class="absolute top-4 right-4 bg-brand-gold text-brand-emeraldDark font-bold text-xs px-3 py-1 rounded-full shadow-md"
+              >
+                الأكثر مبيعاً
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="space-y-6">
+              <div>
+                <h3
+                  class="text-2xl font-bold font-serif-custom text-brand-gold"
+                >
+                  نوتات العطر (Fragrance Notes)
+                </h3>
+
+                <p class="text-brand-cream/80 text-sm mt-1">
+                  مزيج ساحر يجمع بين الانتعاش والجاذبية الشديدة
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <!-- Top -->
+                <div
+                  class="bg-brand-emerald/80 p-3.5 rounded-xl border border-brand-gold/20 flex items-center gap-4"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0"
+                  >
+                    <i class="fa-solid fa-apple-whole"></i>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-sm text-brand-goldLight">
+                      المقدمة (Top Notes)
+                    </h4>
+
+                    <p class="text-xs text-brand-cream/90">
+                      خوخ، زهر التفاح (Peach & Apple Blossom)
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Middle -->
+                <div
+                  class="bg-brand-emerald/80 p-3.5 rounded-xl border border-brand-gold/20 flex items-center gap-4"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0"
+                  >
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-sm text-brand-goldLight">
+                      القلب (Middle Notes)
+                    </h4>
+
+                    <p class="text-xs text-brand-cream/90">
+                      زهر الأناناس (Pineapple Blossom)
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Base -->
+                <div
+                  class="bg-brand-emerald/80 p-3.5 rounded-xl border border-brand-gold/20 flex items-center gap-4"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0"
+                  >
+                    <i class="fa-solid fa-leaf"></i>
+                  </div>
+
+                  <div>
+                    <h4 class="font-bold text-sm text-brand-goldLight">
+                      القاعدة (Base Notes)
+                    </h4>
+
+                    <p class="text-xs text-brand-cream/90">
+                      مسك، ورد بري، باتشولي (Musk, Wild Rose, Patchouli)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product Footer -->
+              <div
+                class="pt-4 flex items-center justify-between border-t border-brand-gold/20"
+              >
+                <div>
+                  <span class="block text-xs text-brand-cream/60">
+                    الحجم الأصلي: 100ml
+                  </span>
+
+                  <span class="text-xl font-bold text-brand-gold">
+                    عطر مضاوي (MIDAW)
+                  </span>
+                </div>
+
+                <span
+                  class="text-xs bg-brand-gold/10 text-brand-gold border border-brand-gold/30 px-3 py-1.5 rounded-full font-semibold"
+                >
+                  متوفر للطلب الفوري
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Form -->
+          <form
+            id="whatsapp-order-form"
+            class="w-full bg-brand-emerald/40 border border-brand-gold/30 rounded-3xl p-6 sm:p-8 space-y-4 shadow-2xl"
+          >
+            <div class="border-b border-brand-gold/20 pb-3 text-center">
+              <h3 class="text-2xl font-bold text-white font-serif-custom">
+                طلب عطر مباشر
+              </h3>
+
+              <p class="text-xs text-brand-cream/70 mt-1">
+                يرجى ملء البيانات لتأكيد طلبك فوراً عبر الواتساب
+              </p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-brand-gold mb-1">
+                اسم العطر *
+              </label>
+
+              <input
+                type="text"
+                value="عطر مضاوي"
+                disabled
+                id="perfume-name"
+                required
+                class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm cursor-not-allowed"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-brand-gold mb-1">
+                  الحجم *
+                </label>
+
+                <input
+                  type="text"
+                  id="perfume-size"
+                  required
+                  placeholder="مثال: 50ml"
+                  class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-gold mb-1">
+                  الكمية *
+                </label>
+
+                <input
+                  type="number"
+                  id="perfume-qty"
+                  value="1"
+                  min="1"
+                  required
+                  class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-brand-gold mb-1">
+                الاسم بالكامل *
+              </label>
+
+              <input
+                type="text"
+                id="cust-name"
+                required
+                placeholder="مثال: أحمد"
+                class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="block text-xs font-semibold text-brand-gold mb-1">
+                  المحافظة *
+                </label>
+
+                <input
+                  type="text"
+                  id="cust-gov"
+                  required
+                  placeholder="مثال: البحيرة"
+                  class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm"
+                />
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-brand-gold mb-1">
+                  المركز / المدينة *
+                </label>
+
+                <input
+                  type="text"
+                  id="cust-center"
+                  required
+                  placeholder="مثال: دمنهور"
+                  class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-brand-gold mb-1">
+                علامة مميزة / العنوان *
+              </label>
+
+              <input
+                type="text"
+                id="cust-landmark"
+                required
+                placeholder="مثال: بجوار..."
+                class="w-full px-4 py-2.5 rounded-xl bg-brand-emeraldDark/80 border border-brand-gold/30 text-white placeholder-brand-cream/40 focus:outline-none focus:border-brand-gold text-sm"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full mt-2 px-6 py-3.5 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark font-extrabold flex items-center justify-center gap-2 transition-all shadow-lg shadow-brand-gold/20 hover:scale-[1.02]"
+            >
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+
+              <span> إرسال الطلب عبر الواتساب </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ORDER FORM JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+      document
+        .getElementById("whatsapp-order-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const perfumeName = document
+            .getElementById("perfume-name")
+            .value.trim();
+
+          const perfumeSize = document
+            .getElementById("perfume-size")
+            .value.trim();
+
+          const perfumeQty = document
+            .getElementById("perfume-qty")
+            .value.trim();
+
+          const custName = document.getElementById("cust-name").value.trim();
+
+          const custGov = document.getElementById("cust-gov").value.trim();
+
+          const custCenter = document
+            .getElementById("cust-center")
+            .value.trim();
+
+          const custLandmark = document
+            .getElementById("cust-landmark")
+            .value.trim();
+
+          let message = `السلام عليكم\n\n`;
+
+          message += `أرغب في طلب ${perfumeName}:\n\n`;
+
+          message += `الاسم: ${custName}\n`;
+
+          message += `الحجم: ${perfumeSize}\n`;
+
+          message += `الكمية: ${perfumeQty}\n`;
+
+          message += `المحافظة: ${custGov}\n`;
+
+          message += `المركز: ${custCenter}\n`;
+
+          message += `علامة مميزة: ${custLandmark}\n\n`;
+
+          message += `أرجو تأكيد الطلب وإرسال تفاصيل الشحن.`;
+
+          const encodedMessage = encodeURIComponent(message);
+
+          window.open(
+            "https://wa.me/" + WHATSAPP_PHONE + "?text=" + encodedMessage,
+            "_blank",
+          );
+        });
+    </script>
+
+    <!-- =========================================================
+         SECTION 5: REVIEWS
+    ========================================================== -->
+
+    <section id="reviews" class="py-20 bg-brand-emerald">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <span
+            class="text-brand-gold font-bold tracking-widest text-sm uppercase"
+          >
+            ثقة عملائنا
+          </span>
+
+          <h2
+            class="text-3xl sm:text-4xl font-bold font-serif-custom text-white"
+          >
+            ماذا يقولون عن Évora؟
+          </h2>
+
+          <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Review 1 -->
+          <div
+            class="group bg-brand-emeraldDark/80 p-6 rounded-2xl border border-brand-gold/20 space-y-5 hover:-translate-y-1 hover:border-brand-gold/40 transition-all duration-300"
+          >
+            <div class="flex justify-between items-start">
+              <div class="flex text-brand-gold text-sm gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <i
+                class="fa-solid fa-quote-right text-brand-gold/20 text-3xl"
+              ></i>
+            </div>
+
+            <p class="text-sm text-brand-cream/80 leading-relaxed">
+              "اه الحمد لله استلمتها ماشاء الله جامدة ريحتها احسن من اللى توقعته
+              بكتيييير معظم اللى يقابلنى يقولى اسمها ايه لما تعبت جزاك الله
+              خيراً ❤️🤍"
+            </p>
+
+            <div
+              class="flex items-center gap-3 pt-3 border-t border-brand-gold/10"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0"
+              >
+                <i class="fa-solid fa-user text-sm"></i>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-brand-cream">عميل Évora</p>
+
+                <p class="text-xs text-brand-cream/50">عميل موثوق</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div
+            class="group bg-brand-emeraldDark/80 p-6 rounded-2xl border border-brand-gold/20 space-y-5 hover:-translate-y-1 hover:border-brand-gold/40 transition-all duration-300"
+          >
+            <div class="flex justify-between items-start">
+              <div class="flex text-brand-gold text-sm gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <i
+                class="fa-solid fa-quote-right text-brand-gold/20 text-3xl"
+              ></i>
+            </div>
+
+            <p class="text-sm text-brand-cream/80 leading-relaxed">
+              "السلام عليكم ورحمة الله وبركاته سلمت الاوردر لصاحبى امبارح وتعمدت
+              انه يكون الاستلام فى تجمع وكده (أسلوب ماركتينج يعنى) 🙃 وده اعتبره
+              رد على اول اورد انا اخذته منك (مضاوى) أبشر فى اللى جاى ان شاء
+              الله"
+            </p>
+
+            <div
+              class="flex items-center gap-3 pt-3 border-t border-brand-gold/10"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0"
+              >
+                <i class="fa-solid fa-user text-sm"></i>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-brand-cream">عميل Évora</p>
+
+                <p class="text-xs text-brand-cream/50">عميل موثوق</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div
+            class="group bg-brand-emeraldDark/80 p-6 rounded-2xl border border-brand-gold/20 space-y-5 hover:-translate-y-1 hover:border-brand-gold/40 transition-all duration-300"
+          >
+            <div class="flex justify-between items-start">
+              <div class="flex text-brand-gold text-sm gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <i
+                class="fa-solid fa-quote-right text-brand-gold/20 text-3xl"
+              ></i>
+            </div>
+
+            <p class="text-sm text-brand-cream/80 leading-relaxed">
+              "استلمت الأورد الحاجه ما شاء الله كويسه اوي ربنا يوسع عليك ويرزقك
+              ياخويا وان شاء الله مش اخر تعامل بينا وزي العاده مفيش أورد بيوصل
+              منك غير وانت مدلعنا بهدياتك الجميله 😂"
+            </p>
+
+            <div
+              class="flex items-center gap-3 pt-3 border-t border-brand-gold/10"
+            >
+              <div
+                class="w-9 h-9 rounded-full bg-brand-gold/10 text-brand-gold flex items-center justify-center shrink-0"
+              >
+                <i class="fa-solid fa-user text-sm"></i>
+              </div>
+
+              <div>
+                <p class="text-sm font-bold text-brand-cream">عميل Évora</p>
+
+                <p class="text-xs text-brand-cream/50">عميل موثوق</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer
+      class="bg-brand-emeraldDark border-t border-brand-gold/20 text-brand-cream/80 pt-16 pb-8"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-10 mb-12"
+      >
+        <!-- Brand Info -->
+        <div class="space-y-4 md:col-span-2">
+          <a href="#hero" class="flex items-center gap-3 group">
+            <div
+              class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center bg-brand-emerald text-brand-gold group-hover:scale-105 transition-transform"
+            >
+              <i class="fa-solid font-bold text-xl"> É </i>
+            </div>
+
+            <span
+              class="font-serif-custom text-2xl font-bold gold-gradient-text"
+            >
+              ÉVORA for perfume
+            </span>
+          </a>
+
+          <p class="text-xs text-brand-cream/70 max-w-sm leading-relaxed">
+            Évora نؤمن إن العطر مش مجرد رائحة... العطر حضور، شخصية، وذكرى بتفضل
+            موجودة. اختار عطرك، اختار حجمك، وخلي بصمتك تتكلم.
+          </p>
+
+          <div class="flex gap-4 pt-2">
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/profile.php?id=61590479972122"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-9 h-9 rounded-full bg-brand-emerald border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-emeraldDark transition-all"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook-f text-sm"></i>
+            </a>
+
+            <!-- WhatsApp -->
+            <a
+              id="footer-whatsapp"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-9 h-9 rounded-full bg-brand-emerald border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-emeraldDark transition-all"
+              aria-label="WhatsApp"
+            >
+              <i class="fa-brands fa-whatsapp text-sm"></i>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/a7medbnmostafa?stkn=MXMwcmc2eHZqbzIydQ=="
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-9 h-9 rounded-full bg-brand-emerald border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-emeraldDark transition-all"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4
+            class="text-white font-bold mb-4 font-serif-custom text-base border-b border-brand-gold/20 pb-2 inline-block"
+          >
+            روابط سريعة
+          </h4>
+
+          <ul class="space-y-2.5 text-xs">
+            <li>
+              <a href="#hero" class="hover:text-brand-gold transition-colors">
+                الرئيسية
+              </a>
+            </li>
+
+            <li>
+              <a href="#quiz" class="hover:text-brand-gold transition-colors">
+                اكتشف عطرك المناسب
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#bestsellers"
+                class="hover:text-brand-gold transition-colors"
+              >
+                الأكثر طلبًا
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#signature"
+                class="hover:text-brand-gold transition-colors"
+              >
+                عطر مضاوي الأيقوني
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#reviews"
+                class="hover:text-brand-gold transition-colors"
+              >
+                آراء عملائنا
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4
+            class="text-white font-bold mb-4 font-serif-custom text-base border-b border-brand-gold/20 pb-2 inline-block"
+          >
+            التواصل والطلب
+          </h4>
+
+          <ul class="space-y-3 text-xs">
+            <li class="flex items-center gap-2">
+              <i class="fa-brands fa-whatsapp text-brand-gold"></i>
+
+              <span id="footer-phone"></span>
+            </li>
+
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-brand-gold"></i>
+
+              <span> خدمة التوصيل متوفرة لكافة المحافظات </span>
+            </li>
+
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-headset text-brand-gold"></i>
+
+              <span> الدعم الفني وخدمة العملاء يومياً </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div
+        class="border-t border-brand-gold/10 max-w-7xl mx-auto px-4 pt-6 text-center text-xs text-brand-cream/50"
+      >
+        جميع الحقوق محفوظة © 2026 لـ
+
+        <span class="text-brand-gold font-bold"> Évora for perfume </span>
+      </div>
+    </footer>
+
+    <!-- =========================================================
+         FOOTER WHATSAPP + PHONE
+    ========================================================== -->
+
+    <script>
+      const footerWhatsapp = document.getElementById("footer-whatsapp");
+
+      const footerPhone = document.getElementById("footer-phone");
+
+      if (footerWhatsapp) {
+        footerWhatsapp.href = `https://wa.me/${WHATSAPP_PHONE}`;
+      }
+
+      if (footerPhone) {
+        footerPhone.textContent = WHATSAPP_PHONE.replace(/^20/, "0");
+      }
+    </script>
+  </body>
+</html>
