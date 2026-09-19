@@ -3,7 +3,7 @@
   <head>
     <link
       rel="shortcut icon"
-      href="../assets/img/evoralogo0.jpg"
+      href="assets/img/Évora (2).jpg"
       type="image/x-icon"
     />
     <meta charset="UTF-8" />
@@ -241,7 +241,7 @@
     <section
       id="hero"
       class="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style="background-image: url(&quot;../assets/img/evora.jpeg&quot;)"
+      style="background-image: url(&quot;assets/img/evora.jpeg&quot;)"
     >
       <!-- Overlay -->
       <div
@@ -295,7 +295,7 @@
               class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-brand-gold/20 to-transparent p-2"
             >
               <img
-                src="../assets/img/Évora (2).jpg"
+                src="assets/img/Évora (2).jpg"
                 alt="Evora Luxury Perfume"
                 class="w-full h-full object-cover rounded-full shadow-2xl border-2 border-brand-gold/40"
               />
@@ -345,396 +345,356 @@
     <!-- =========================================================
          SECTION 2: PERFUME QUIZ
     ========================================================== -->
-<!-- =========================================================
-     SECTION: PERFUME QUIZ
-     ========================================================= -->
-<section
-  id="quiz"
-  class="py-20 bg-brand-emerald relative overflow-hidden"
->
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-    <!-- Header -->
-    <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
-      <span
-        class="text-brand-gold font-bold tracking-widest text-xs sm:text-sm uppercase block"
-      >
-        اكتشف عطرك
-      </span>
-
-      <h2
-        class="text-2xl sm:text-4xl font-bold font-serif-custom text-white"
-      >
-        عطرك المناسب يبدأ بـ 3 أسئلة
-      </h2>
-
-      <p class="text-brand-cream/80 text-xs sm:text-sm leading-relaxed">
-        جاوب على 3 أسئلة بسيطة، وإحنا نساعدك تلاقي العطر الأقرب لذوقك.
-      </p>
-
-      <div class="w-20 h-0.5 bg-brand-gold mx-auto rounded-full"></div>
-    </div>
-
-    <!-- Quiz Card -->
-    <div
-      class="bg-brand-emeraldDark/90 border border-brand-gold/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative min-h-[420px] flex flex-col justify-between"
-    >
-
-      <!-- Progress Indicator -->
-      <div id="quiz-progress-wrapper" class="space-y-2 mb-8">
-        <div
-          class="flex justify-between items-center text-xs text-brand-gold font-bold"
-        >
-          <span id="step-indicator-text">
-            السؤال 1 من 3
+    <section id="quiz" class="py-20 bg-brand-emerald relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10 space-y-3">
+          <span
+            class="text-brand-gold font-bold tracking-widest text-xs sm:text-sm uppercase block"
+          >
+            اكتشف عطرك
           </span>
+
+          <h2
+            class="text-2xl sm:text-4xl font-bold font-serif-custom text-white"
+          >
+            عطرك المناسب يبدأ بـ 3 أسئلة
+          </h2>
+
+          <p class="text-brand-cream/80 text-xs sm:text-sm leading-relaxed">
+            جاوب على 3 أسئلة بسيطة، وإحنا نساعدك تلاقي العطر الأقرب لذوقك.
+          </p>
+
+          <div class="w-20 h-0.5 bg-brand-gold mx-auto rounded-full"></div>
         </div>
 
+        <!-- Quiz Card -->
         <div
-          class="w-full bg-brand-emerald h-2 rounded-full overflow-hidden border border-brand-gold/10"
+          class="bg-brand-emeraldDark/90 border border-brand-gold/30 rounded-3xl p-6 sm:p-10 shadow-2xl relative min-h-[420px] flex flex-col justify-between"
         >
-          <div
-            id="progress-bar-fill"
-            class="bg-brand-gold h-full w-1/3 transition-all duration-300 ease-out"
-          ></div>
-        </div>
-      </div>
+          <!-- Progress Indicator -->
+          <div id="quiz-progress-wrapper" class="space-y-2 mb-8">
+            <div
+              class="flex justify-between items-center text-xs text-brand-gold font-bold"
+            >
+              <span id="step-indicator-text"> السؤال 1 من 3 </span>
+            </div>
 
-      <!-- Quiz Steps Wrapper -->
-      <div
-        id="quiz-steps-wrapper"
-        class="relative flex-grow"
-      >
+            <div
+              class="w-full bg-brand-emerald h-2 rounded-full overflow-hidden border border-brand-gold/10"
+            >
+              <div
+                id="progress-bar-fill"
+                class="bg-brand-gold h-full w-1/3 transition-all duration-300 ease-out"
+              ></div>
+            </div>
+          </div>
 
-        <!-- =====================================================
+          <!-- Quiz Steps Wrapper -->
+          <div id="quiz-steps-wrapper" class="relative flex-grow">
+            <!-- =====================================================
              STEP 1: GENDER
              ===================================================== -->
-        <div
-          id="step-1"
-          class="quiz-step-content space-y-6 transition-all duration-300"
-        >
-          <h3
-            class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
-          >
-            لمن تبحث عن العطر؟
-          </h3>
-
-          <div
-            class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto"
-          >
-
-            <!-- Men -->
-            <button
-              type="button"
-              data-value="men"
-              class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+            <div
+              id="step-1"
+              class="quiz-step-content space-y-6 transition-all duration-300"
             >
-              <i class="fa-solid fa-user-tie text-brand-gold"></i>
+              <h3
+                class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
+              >
+                لمن تبحث عن العطر؟
+              </h3>
 
-              <span>رجالي</span>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl mx-auto"
+              >
+                <!-- Men -->
+                <button
+                  type="button"
+                  data-value="men"
+                  class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-user-tie text-brand-gold"></i>
 
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
+                  <span>رجالي</span>
 
-            <!-- Women -->
-            <button
-              type="button"
-              data-value="women"
-              class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-crown text-brand-gold"></i>
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
 
-              <span>نسائي</span>
+                <!-- Women -->
+                <button
+                  type="button"
+                  data-value="women"
+                  class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-crown text-brand-gold"></i>
 
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
+                  <span>نسائي</span>
 
-            <!-- Unisex -->
-            <button
-              type="button"
-              data-value="unisex"
-              class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
-            >
-              <i
-                class="fa-solid fa-wand-magic-sparkles text-brand-gold"
-              ></i>
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
 
-              <span>يونيسكس</span>
+                <!-- Unisex -->
+                <button
+                  type="button"
+                  data-value="unisex"
+                  class="opt-btn-1 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i
+                    class="fa-solid fa-wand-magic-sparkles text-brand-gold"
+                  ></i>
 
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
+                  <span>يونيسكس</span>
 
-          </div>
-        </div>
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+              </div>
+            </div>
 
-        <!-- =====================================================
+            <!-- =====================================================
              STEP 2: FRAGRANCE FAMILY
              Generated dynamically from perfumes.json
              ===================================================== -->
-        <div
-          id="step-2"
-          class="quiz-step hidden"
-        >
-          <h3
-            class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center mb-6"
-          >
-            أي طابع عطري تفضّل؟
-          </h3>
+            <div id="step-2" class="quiz-step hidden">
+              <h3
+                class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center mb-6"
+              >
+                أي طابع عطري تفضّل؟
+              </h3>
 
-          <!--
-            JavaScript generates the fragrance-family buttons
-            from fragranceFamilies inside perfumes.json
-          -->
-          <div
-            id="quiz-family-options"
-            class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto"
-          ></div>
-        </div>
-
-        <!-- =====================================================
-             STEP 3: VIBE
-             ===================================================== -->
-        <div
-          id="step-3"
-          class="quiz-step-content hidden space-y-6 transition-all duration-300"
-        >
-          <h3
-            class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
-          >
-            إيه الإحساس اللي بتحبه في عطرك؟
-          </h3>
-
-          <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto"
-          >
-
-            <!-- Elegant -->
-            <button
-              type="button"
-              data-value="elegant"
-              onclick="selectOptionUI(3, this)"
-              class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-gem text-brand-gold"></i>
-
-              <span>أنيق وراقي</span>
-
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
-
-            <!-- Bold -->
-            <button
-              type="button"
-              data-value="bold"
-              onclick="selectOptionUI(3, this)"
-              class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-fire text-brand-gold"></i>
-
-              <span>جريء ولافت</span>
-
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
-
-            <!-- Light -->
-            <button
-              type="button"
-              data-value="light"
-              onclick="selectOptionUI(3, this)"
-              class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-wind text-brand-gold"></i>
-
-              <span>منعش وخفيف</span>
-
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
-
-            <!-- Mysterious -->
-            <button
-              type="button"
-              data-value="mysterious"
-              onclick="selectOptionUI(3, this)"
-              class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-eye text-brand-gold"></i>
-
-              <span>دافئ وغامض</span>
-
-              <i
-                class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
-              ></i>
-            </button>
-
-          </div>
-        </div>
-
-        <!-- =====================================================
-             QUIZ RESULT
-             ===================================================== -->
-        <div
-          id="quiz-result-step"
-          class="hidden text-center space-y-5 pt-2"
-        >
-
-          <!-- Perfume Image -->
-          <div
-            id="quiz-result-image-wrapper"
-            class="hidden w-40 h-40 sm:w-48 sm:h-48 mx-auto rounded-2xl overflow-hidden border border-brand-gold/30 shadow-lg bg-brand-emerald"
-          >
-            <img
-              id="quiz-result-image"
-              src=""
-              alt="العطر المرشح"
-              class="w-full h-full object-cover"
-            />
-          </div>
-
-          <!-- Result Icon -->
-          <div
-            class="inline-block p-3 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold"
-          >
-            <i
-              class="fa-solid fa-wand-magic-sparkles text-2xl"
-            ></i>
-          </div>
-
-          <!-- Perfume Info -->
-          <div>
-
-            <span
-              class="text-xs text-brand-gold font-bold tracking-widest uppercase block mb-1"
-            >
-              ترشيحنا ليك
-            </span>
-
-            <!-- Arabic Name -->
-            <h3
-              id="quiz-result-name"
-              class="text-2xl sm:text-3xl font-bold font-serif-custom gold-gradient-text"
-            ></h3>
-
-            <!-- Latin Name -->
-            <p
-              id="quiz-result-latin"
-              class="text-sm text-brand-gold/80 font-semibold mt-1"
-            ></p>
-
-            <!-- Description -->
-            <p
-              id="quiz-result-description"
-              class="text-xs sm:text-sm text-brand-cream/80 max-w-md mx-auto mt-2 leading-relaxed"
-            ></p>
-
-            <!-- Product Details -->
-            <div
-              class="flex flex-wrap items-center justify-center gap-2 mt-4"
-            >
-
-              <!-- Gender -->
-              <span
-                id="quiz-result-gender"
-                class="px-3 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold"
-              ></span>
-
-              <!-- Price -->
-              <span
-                id="quiz-result-price"
-                class="px-3 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold"
-              ></span>
-
+              <div
+                id="quiz-family-options"
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto"
+              ></div>
             </div>
 
-            <!-- Families -->
+            <!-- =====================================================
+             STEP 3: VIBE
+             ===================================================== -->
             <div
-              id="quiz-result-families"
-              class="flex flex-wrap items-center justify-center gap-2 mt-3"
-            ></div>
+              id="step-3"
+              class="quiz-step-content hidden space-y-6 transition-all duration-300"
+            >
+              <h3
+                class="text-lg sm:text-xl font-bold text-white font-serif-custom text-center"
+              >
+                إيه الإحساس اللي بتحبه في عطرك؟
+              </h3>
 
+              <div
+                class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto"
+              >
+                <!-- Elegant -->
+                <button
+                  type="button"
+                  data-value="elegant"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-gem text-brand-gold"></i>
+
+                  <span>أنيق وراقي</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <!-- Bold -->
+                <button
+                  type="button"
+                  data-value="bold"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-fire text-brand-gold"></i>
+
+                  <span>جريء ولافت</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <!-- Light -->
+                <button
+                  type="button"
+                  data-value="light"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-wind text-brand-gold"></i>
+
+                  <span>منعش وخفيف</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+
+                <!-- Mysterious -->
+                <button
+                  type="button"
+                  data-value="mysterious"
+                  onclick="selectOptionUI(3, this)"
+                  class="opt-btn-3 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2"
+                >
+                  <i class="fa-solid fa-eye text-brand-gold"></i>
+
+                  <span>دافئ وغامض</span>
+
+                  <i
+                    class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"
+                  ></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- =====================================================
+             QUIZ RESULT
+             ===================================================== -->
+            <div
+              id="quiz-result-step"
+              class="hidden text-center space-y-5 pt-2"
+            >
+              <!-- Perfume Image -->
+              <div
+                id="quiz-result-image-wrapper"
+                class="hidden w-40 h-40 sm:w-48 sm:h-48 mx-auto rounded-2xl overflow-hidden border border-brand-gold/30 shadow-lg bg-brand-emerald"
+              >
+                <img
+                  id="quiz-result-image"
+                  src=""
+                  alt="العطر المرشح"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <!-- Result Icon -->
+              <div
+                class="inline-block p-3 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold"
+              >
+                <i class="fa-solid fa-wand-magic-sparkles text-2xl"></i>
+              </div>
+
+              <!-- Perfume Info -->
+              <div>
+                <span
+                  class="text-xs text-brand-gold font-bold tracking-widest uppercase block mb-1"
+                >
+                  ترشيحنا ليك
+                </span>
+
+                <!-- Arabic Name -->
+                <h3
+                  id="quiz-result-name"
+                  class="text-2xl sm:text-3xl font-bold font-serif-custom gold-gradient-text"
+                ></h3>
+
+                <!-- Latin Name -->
+                <p
+                  id="quiz-result-latin"
+                  class="text-sm text-brand-gold/80 font-semibold mt-1"
+                ></p>
+
+                <!-- Description -->
+                <p
+                  id="quiz-result-description"
+                  class="text-xs sm:text-sm text-brand-cream/80 max-w-md mx-auto mt-2 leading-relaxed"
+                ></p>
+
+                <!-- Product Details -->
+                <div
+                  class="flex flex-wrap items-center justify-center gap-2 mt-4"
+                >
+                  <!-- Gender -->
+                  <span
+                    id="quiz-result-gender"
+                    class="px-3 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold"
+                  ></span>
+
+                  <!-- Price -->
+                  <span
+                    id="quiz-result-price"
+                    class="px-3 py-1.5 rounded-full bg-brand-gold/10 border border-brand-gold/20 text-brand-gold text-xs font-semibold"
+                  ></span>
+                </div>
+
+                <!-- Families -->
+                <div
+                  id="quiz-result-families"
+                  class="flex flex-wrap items-center justify-center gap-2 mt-3"
+                ></div>
+              </div>
+
+              <!-- Actions -->
+              <div
+                class="pt-2 flex flex-col sm:flex-row gap-3 justify-center items-center"
+              >
+                <!-- Add To Cart -->
+                <button
+                  id="quiz-add-to-cart"
+                  type="button"
+                  class="w-full sm:w-auto px-8 py-3 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark text-sm font-extrabold flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95"
+                >
+                  <i class="fa-solid fa-cart-shopping text-lg"></i>
+
+                  <span>أضف للسلة</span>
+                </button>
+
+                <!-- Restart -->
+                <button
+                  type="button"
+                  id="quiz-restart-button"
+                  class="text-xs text-brand-goldLight hover:underline pt-2 sm:pt-0 flex items-center justify-center gap-1 mx-auto"
+                >
+                  <span>إعادة الاختبار</span>
+
+                  <i class="fa-solid fa-rotate-right text-xs"></i>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <!-- Actions -->
-          <div
-            class="pt-2 flex flex-col sm:flex-row gap-3 justify-center items-center"
-          >
-
-            <!-- Add To Cart -->
-            <button
-              id="quiz-add-to-cart"
-              type="button"
-              class="w-full sm:w-auto px-8 py-3 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark text-sm font-extrabold flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95"
-            >
-              <i class="fa-solid fa-cart-shopping text-lg"></i>
-
-              <span>أضف للسلة</span>
-            </button>
-
-            <!-- Restart -->
-            <button
-              type="button"
-              id="quiz-restart-button"
-              class="text-xs text-brand-goldLight hover:underline pt-2 sm:pt-0 flex items-center justify-center gap-1 mx-auto"
-            >
-              <span>إعادة الاختبار</span>
-
-              <i
-                class="fa-solid fa-rotate-right text-xs"
-              ></i>
-            </button>
-
-          </div>
-        </div>
-
-      </div>
-
-      <!-- =====================================================
+          <!-- =====================================================
            QUIZ NAVIGATION
            ===================================================== -->
-      <div
-        id="quiz-navigation"
-        class="pt-8 border-t border-brand-gold/10 flex items-center justify-between mt-auto"
-      >
+          <div
+            id="quiz-navigation"
+            class="pt-8 border-t border-brand-gold/10 flex items-center justify-between mt-auto"
+          >
+            <!-- Previous -->
+            <button
+              id="prev-btn"
+              type="button"
+              class="invisible text-xs sm:text-sm text-brand-cream/70 hover:text-brand-gold flex items-center gap-1.5 transition-colors"
+            >
+              <span>السابق</span>
 
-        <!-- Previous -->
-        <button
-          id="prev-btn"
-          type="button"
-          class="invisible text-xs sm:text-sm text-brand-cream/70 hover:text-brand-gold flex items-center gap-1.5 transition-colors"
-        >
-          <span>السابق</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
 
-          <i class="fa-solid fa-arrow-right text-xs"></i>
-        </button>
+            <!-- Next -->
+            <button
+              id="next-btn"
+              type="button"
+              disabled
+              class="px-6 py-2.5 rounded-full bg-brand-gold/30 text-brand-emeraldDark text-xs sm:text-sm font-extrabold cursor-not-allowed transition-all shadow-md flex items-center justify-center gap-1"
+            >
+              <span>التالي</span>
 
-        <!-- Next -->
-        <button
-          id="next-btn"
-          type="button"
-          disabled
-          class="px-6 py-2.5 rounded-full bg-brand-gold/30 text-brand-emeraldDark text-xs sm:text-sm font-extrabold cursor-not-allowed transition-all shadow-md flex items-center justify-center gap-1"
-        >
-          <span>التالي</span>
-
-          <i class="fa-solid fa-arrow-left text-xs"></i>
-        </button>
-
+              <i class="fa-solid fa-arrow-left text-xs"></i>
+            </button>
+          </div>
+        </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- =========================================================
      SECTION 3: BESTSELLERS
@@ -763,9 +723,7 @@
       <div
         id="bestsellers-grid"
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
-      >
-        <!-- JS renderBestsellersUI() will inject product cards here -->
-      </div>
+      ></div>
 
       <!-- View All Products Link -->
       <div class="mt-10 text-center">
@@ -802,7 +760,7 @@
       </div>
     </section>
 
-<!-- =========================================================
+    <!-- =========================================================
 *         SECTION 4: SIGNATURE PRODUCT
 *    ========================================================== -->
 
@@ -815,10 +773,11 @@
           >
             العطر الأيقوني
           </span>
-          <h2 id="signature-main-title"
+          <h2
+            id="signature-main-title"
             class="text-3xl sm:text-4xl font-bold font-serif-custom text-white"
           >
-            -- <!-- سيتم ملؤه من JS -->
+            --
           </h2>
           <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
         </div>
@@ -833,7 +792,7 @@
             <div class="relative group overflow-hidden rounded-2xl">
               <img
                 id="signature-img"
-                src="../assets/img/evora.jpeg"
+                src="assets/img/evora.jpeg"
                 alt="عطر أيقوني"
                 class="w-full h-[320px] sm:h-[380px] object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
               />
@@ -870,7 +829,10 @@
                     <h4 class="font-bold text-sm text-brand-goldLight">
                       المقدمة (Top Notes)
                     </h4>
-                    <p id="signature-top-notes" class="text-xs text-brand-cream/90">
+                    <p
+                      id="signature-top-notes"
+                      class="text-xs text-brand-cream/90"
+                    >
                       --
                     </p>
                   </div>
@@ -888,7 +850,10 @@
                     <h4 class="font-bold text-sm text-brand-goldLight">
                       القلب (Middle Notes)
                     </h4>
-                    <p id="signature-heart-notes" class="text-xs text-brand-cream/90">
+                    <p
+                      id="signature-heart-notes"
+                      class="text-xs text-brand-cream/90"
+                    >
                       --
                     </p>
                   </div>
@@ -906,7 +871,10 @@
                     <h4 class="font-bold text-sm text-brand-goldLight">
                       القاعدة (Base Notes)
                     </h4>
-                    <p id="signature-base-notes" class="text-xs text-brand-cream/90">
+                    <p
+                      id="signature-base-notes"
+                      class="text-xs text-brand-cream/90"
+                    >
                       --
                     </p>
                   </div>
@@ -932,12 +900,16 @@
                 >
                   Signature Collection
                 </span>
-                <h3 id="signature-title"
+                <h3
+                  id="signature-title"
                   class="text-3xl font-bold text-white font-serif-custom mt-1"
                 >
                   --
                 </h3>
-                <p id="signature-desc" class="text-sm text-brand-cream/80 mt-2 leading-relaxed">
+                <p
+                  id="signature-desc"
+                  class="text-sm text-brand-cream/80 mt-2 leading-relaxed"
+                >
                   --
                 </p>
               </div>
@@ -976,9 +948,7 @@
                 class="bg-brand-emeraldDark/80 rounded-2xl p-4 border border-brand-gold/20 space-y-2"
               >
                 <div class="flex items-center justify-between">
-                  <span class="text-xs text-brand-cream/70"
-                    >السعر الحالي</span
-                  >
+                  <span class="text-xs text-brand-cream/70">السعر الحالي</span>
                   <span
                     class="text-xs bg-brand-gold/10 text-brand-gold border border-brand-gold/30 px-2.5 py-0.5 rounded-full font-semibold"
                   >
@@ -986,7 +956,9 @@
                   </span>
                 </div>
                 <div class="flex items-baseline gap-3">
-                  <span id="signature-price" class="text-3xl font-extrabold text-brand-gold"
+                  <span
+                    id="signature-price"
+                    class="text-3xl font-extrabold text-brand-gold"
                     >--</span
                   >
                 </div>
@@ -999,7 +971,7 @@
             >
               <button
                 type="button"
-                id="signature-add-btn" 
+                id="signature-add-btn"
                 class="w-full px-6 py-4 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark font-extrabold flex items-center justify-center gap-3 transition-all shadow-lg shadow-brand-gold/20 hover:scale-[1.02] cursor-pointer"
               >
                 <i class="fa-solid fa-cart-shopping text-xl"></i>
@@ -1019,6 +991,7 @@
         </div>
       </div>
     </section>
+
     <!-- =========================================================
 *         SECTION 5: WHY ÉVORA?
 *    ========================================================== -->
@@ -1428,7 +1401,6 @@
         </div>
       </div>
     </section>
-    
 
     <!-- =========================================================
          SECTION 8: REVIEWS
@@ -1740,6 +1712,6 @@
       </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const CART_KEY = "evora_cart";
   const WA_NUMBER = "201151275116";
-  const FALLBACK_IMG = "../assets/img/evora.jpeg";
+  const FALLBACK_IMG = "assets/img/evora.jpeg";
 
   const params = new URLSearchParams(location.search);
   const productId = params.get("id");
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const getProductImage = (p) => {
     if (!p) return FALLBACK_IMG;
-    if (p.startsWith("../") || p.startsWith("./") || p.startsWith("/") || p.startsWith("http"))
+    if (p.startsWith("./") || p.startsWith("/") || p.startsWith("http"))
       return p;
-    return `../${p}`;
+    return p;
   };
 
   // ===================================================
@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       const c = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
       return Array.isArray(c) ? c : [];
-    } catch { return []; }
+    } catch {
+      return [];
+    }
   };
   const saveCart = (cart) => {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
@@ -87,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const res = await fetch("../data/perfumes.json", { cache: "no-store" });
+    const res = await fetch("data/perfumes.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     allProducts = Array.isArray(data.products) ? data.products : [];
@@ -200,7 +202,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       wa.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
     }
   };
-  $("qty-plus")?.addEventListener("click", () => { quantity++; updateQty(); });
+  $("qty-plus")?.addEventListener("click", () => {
+    quantity++;
+    updateQty();
+  });
   $("qty-minus")?.addEventListener("click", () => {
     if (quantity > 1) quantity--;
     updateQty();
@@ -270,11 +275,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const p = allProducts.find((x) => String(x.id) === String(btn.dataset.add));
     if (p) addProductToCart(p, 1);
   });
+
   // Footer links
   const waFooter = document.getElementById("footer-whatsapp");
   if (waFooter) waFooter.href = `https://wa.me/201151275116`;
   const phoneSpan = document.getElementById("footer-phone");
   if (phoneSpan) phoneSpan.textContent = "01151275116";
+
   // ===================================================
   // INIT
   // ===================================================

@@ -4,33 +4,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   // =========================================================
 
   const emptyCartView = document.getElementById("empty-cart-view");
-
   const cartContentView = document.getElementById("cart-content-view");
-
   const cartItemsContainer = document.getElementById("cart-items-container");
-
   const cartItemsCount = document.getElementById("cart-items-count");
-
   const cartTotalPrice = document.getElementById("cart-total-price");
-
   const clearCartBtn = document.getElementById("clear-cart-btn");
-
   const orderForm = document.getElementById("whatsapp-order-form");
-
   const fullNameInput = document.getElementById("full-name");
-
   const phoneInput = document.getElementById("phone-number");
-
   const governorateInput = document.getElementById("governorate");
-
   const markazInput = document.getElementById("markaz");
-
   const regionInput = document.getElementById("region");
-
   const landmarkInput = document.getElementById("landmark");
-
   const placeOrderBtn = document.getElementById("place-order-btn");
-
   const toastContainer = document.getElementById("toast-container");
 
   // =========================================================
@@ -45,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function loadProducts() {
     try {
-      const response = await fetch("../data/perfumes.json", {
+      const response = await fetch("data/perfumes.json", {
         cache: "no-store",
       });
 
@@ -54,13 +40,10 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       const data = await response.json();
-
       products = Array.isArray(data.products) ? data.products : [];
-
       renderCart();
     } catch (error) {
       console.error("ÉVORA: Failed to load perfumes.json.", error);
-
       showToast("حدث خطأ أثناء تحميل بيانات المنتجات");
     }
   }
@@ -72,29 +55,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   function getCart() {
     try {
       const storedCart = localStorage.getItem("evora_cart");
-
       if (!storedCart) {
         return [];
       }
-
       const parsedCart = JSON.parse(storedCart);
-
       return Array.isArray(parsedCart) ? parsedCart : [];
     } catch (error) {
       console.error("ÉVORA: Failed to read cart.", error);
-
       return [];
     }
   }
 
   function saveCart(cart) {
     localStorage.setItem("evora_cart", JSON.stringify(cart));
-
     window.dispatchEvent(
       new CustomEvent("evora:cart-updated", {
-        detail: {
-          cart,
-        },
+        detail: { cart },
       }),
     );
   }
@@ -105,15 +81,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function getCartItems() {
     const cart = getCart();
-
     return cart
       .map((cartItem) => {
         const product = getProduct(cartItem.id);
-
         if (!product) {
           return null;
         }
-
         return {
           ...product,
           qty: Math.max(1, Number(cartItem.qty) || 1),
@@ -132,18 +105,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function getProductImage(image) {
     if (!image) {
-      return "../assets/img/evora.jpeg";
+      return "assets/img/evora.jpeg";
     }
-
     if (
-      image.startsWith("../") ||
       image.startsWith("./") ||
-      image.startsWith("/")
+      image.startsWith("/") ||
+      image.startsWith("http")
     ) {
       return image;
     }
-
-    return `../${image}`;
+    return image;
   }
 
   function escapeHTML(value) {
@@ -165,9 +136,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (items.length === 0) {
       emptyCartView?.classList.remove("hidden");
       cartContentView?.classList.add("hidden");
-
       updateNavCartCount(0);
-
       return;
     }
 
@@ -175,7 +144,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     cartContentView?.classList.remove("hidden");
 
     renderCartItems(items);
-
     updateCartSummary(items);
   }
 
@@ -208,7 +176,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 alt="${escapeHTML(item.name)}"
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
-                onerror="this.onerror=null;this.src='../assets/img/evora.jpeg';"
+                onerror="this.onerror=null;this.src='assets/img/evora.jpeg';"
               />
             </a>
 
@@ -339,7 +307,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       .querySelectorAll("#nav-cart-count, .cart-badge")
       .forEach((badge) => {
         badge.textContent = count;
-
         badge.classList.toggle("hidden", count === 0);
       });
   }
@@ -350,7 +317,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function changeQuantity(productId, change) {
     const cart = getCart();
-
     const item = cart.find(
       (cartItem) => String(cartItem.id) === String(productId),
     );
@@ -360,7 +326,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const currentQty = Math.max(1, Number(item.qty) || 1);
-
     const newQty = currentQty + change;
 
     if (newQty <= 0) {
@@ -369,30 +334,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     item.qty = newQty;
-
     saveCart(cart);
     renderCart();
   }
 
   function removeItem(productId) {
     const cart = getCart();
-
     const newCart = cart.filter(
       (item) => String(item.id) !== String(productId),
     );
 
     saveCart(newCart);
-
     showToast("تم حذف المنتج من السلة");
-
     renderCart();
   }
 
   function clearCart() {
     saveCart([]);
-
     showToast("تم تفريغ السلة");
-
     renderCart();
   }
 
@@ -402,20 +361,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   cartItemsContainer?.addEventListener("click", (event) => {
     const increaseBtn = event.target.closest("[data-increase-item]");
-
     const decreaseBtn = event.target.closest("[data-decrease-item]");
-
     const removeBtn = event.target.closest("[data-remove-item]");
 
     if (increaseBtn) {
       changeQuantity(increaseBtn.dataset.increaseItem, 1);
-
       return;
     }
 
     if (decreaseBtn) {
       changeQuantity(decreaseBtn.dataset.decreaseItem, -1);
-
       return;
     }
 
@@ -426,11 +381,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   clearCartBtn?.addEventListener("click", () => {
     const cart = getCart();
-
     if (!cart.length) {
       return;
     }
-
     clearCart();
   });
 
@@ -445,20 +398,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!items.length) {
       showToast("السلة فارغة");
-
       return;
     }
 
     const fullName = fullNameInput?.value.trim() || "";
-
     const phone = phoneInput?.value.trim() || "";
-
     const governorate = governorateInput?.value.trim() || "";
-
     const markaz = markazInput?.value.trim() || "";
-
     const region = regionInput?.value.trim() || "";
-
     const landmark = landmarkInput?.value.trim() || "";
 
     if (
@@ -470,7 +417,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       !landmark
     ) {
       showToast("من فضلك أكمل بيانات الطلب");
-
       return;
     }
 
@@ -482,7 +428,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const orderDetails = items
       .map((item) => {
         const itemTotal = Number(item.price || 0) * Number(item.qty || 0);
-
         return `• ${item.name}
   ${item.qty} × ${formatPrice(item.price)} = ${formatPrice(itemTotal)} ج.م`;
       })
@@ -523,12 +468,9 @@ ${orderDetails}
     }
 
     const toast = document.createElement("div");
-
     toast.className =
       "fixed bottom-5 left-5 z-[9999] max-w-sm rounded-xl bg-brand-emeraldDark border border-brand-gold/20 px-5 py-3 text-sm text-white shadow-2xl transition-all duration-300";
-
     toast.textContent = message;
-
     toastContainer.appendChild(toast);
 
     requestAnimationFrame(() => {
@@ -537,7 +479,6 @@ ${orderDetails}
 
     setTimeout(() => {
       toast.classList.add("opacity-0", "translate-y-2");
-
       setTimeout(() => {
         toast.remove();
       }, 300);
@@ -557,11 +498,13 @@ ${orderDetails}
       renderCart();
     }
   });
+
   // Footer links
   const waFooter = document.getElementById("footer-whatsapp");
   if (waFooter) waFooter.href = `https://wa.me/201151275116`;
   const phoneSpan = document.getElementById("footer-phone");
   if (phoneSpan) phoneSpan.textContent = "01151275116";
+
   // =========================================================
   // INIT
   // =========================================================

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ---------- LOAD ----------
   try {
-    const res = await fetch("../data/perfumes.json", { cache: "no-store" });
+    const res = await fetch("data/perfumes.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     products = data.products || [];
@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       const c = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
       return Array.isArray(c) ? c : [];
-    } catch { return []; }
+    } catch {
+      return [];
+    }
   };
   const saveCart = (cart) => {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
@@ -66,10 +68,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // ---------- IMAGE ----------
   const getProductImage = (p) => {
-    if (!p) return "../assets/img/evora.jpeg";
-    if (p.startsWith("../") || p.startsWith("./") || p.startsWith("/") || p.startsWith("http"))
+    if (!p) return "assets/img/evora.jpeg";
+    if (p.startsWith("./") || p.startsWith("/") || p.startsWith("http"))
       return p;
-    return `../${p}`;
+    return p;
   };
 
   const formatPrice = (p) => Number(p || 0).toLocaleString("ar-EG");
@@ -148,12 +150,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (searchTerm) {
       f = f.filter((p) => {
         const txt = [
-          p.name, p.latin, p.desc, p.gender, p.tier,
+          p.name,
+          p.latin,
+          p.desc,
+          p.gender,
+          p.tier,
           ...(p.families || []),
           ...(p.notes?.top || []),
           ...(p.notes?.heart || []),
           ...(p.notes?.base || []),
-        ].filter(Boolean).join(" ").toLowerCase();
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
         return txt.includes(searchTerm);
       });
     }
@@ -170,7 +179,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       default:
         f.sort(
           (a, b) =>
-            Number(b.isFeatured) + Number(b.isBestseller) -
+            Number(b.isFeatured) +
+            Number(b.isBestseller) -
             (Number(a.isFeatured) + Number(a.isBestseller))
         );
     }
@@ -179,7 +189,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const renderProducts = (list) => {
     if (!productsGrid) return;
-    if (!list.length) { productsGrid.innerHTML = ""; return; }
+    if (!list.length) {
+      productsGrid.innerHTML = "";
+      return;
+    }
     productsGrid.innerHTML = list
       .map((p) => {
         const img = getProductImage(p.image);
@@ -189,7 +202,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <img src="${esc(img)}" alt="${esc(p.name)}"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
-              onerror="this.onerror=null;this.src='../assets/img/evora.jpeg';" />
+              onerror="this.onerror=null;this.src='assets/img/evora.jpeg';" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
             ${p.isBestseller ? `<span class="absolute top-4 right-4 px-3 py-1 rounded-full bg-brand-gold text-brand-emeraldDark text-xs font-bold">الأكثر مبيعًا</span>` : ""}
           </a>
@@ -255,11 +268,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (searchInput) searchInput.value = srch;
     }
   };
+
   // Footer links
   const waFooter = document.getElementById("footer-whatsapp");
   if (waFooter) waFooter.href = `https://wa.me/201151275116`;
   const phoneSpan = document.getElementById("footer-phone");
   if (phoneSpan) phoneSpan.textContent = "01151275116";
+
   // ---------- TOAST ----------
   function showToast(msg) {
     if (!toastContainer) return;

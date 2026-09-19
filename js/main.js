@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // =========================================================
   const CART_KEY = "evora_cart";
   const WA_NUMBER = "201151275116"; // 01151275116
-  const FALLBACK_IMG = "../assets/img/evora.jpeg";
+  const FALLBACK_IMG = "assets/img/evora.jpeg";
 
   // =========================================================
   // HELPERS
@@ -12,13 +12,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const getProductImage = (path) => {
     if (!path) return FALLBACK_IMG;
     if (
-      path.startsWith("../") ||
       path.startsWith("./") ||
       path.startsWith("/") ||
       path.startsWith("http")
     )
       return path;
-    return `../${path}`;
+    return path;
   };
 
   const escapeAttr = (v) =>
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let tiers = [];
 
   try {
-    const res = await fetch("../data/perfumes.json", { cache: "no-store" });
+    const res = await fetch("data/perfumes.json", { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     perfumeCatalog = Array.isArray(data.products) ? data.products : [];
