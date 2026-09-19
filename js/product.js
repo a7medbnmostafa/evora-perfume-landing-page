@@ -270,7 +270,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const p = allProducts.find((x) => String(x.id) === String(btn.dataset.add));
     if (p) addProductToCart(p, 1);
   });
-
+  // Footer links
+  const waFooter = document.getElementById("footer-whatsapp");
+  if (waFooter) waFooter.href = `https://wa.me/201151275116`;
+  const phoneSpan = document.getElementById("footer-phone");
+  if (phoneSpan) phoneSpan.textContent = "01151275116";
   // ===================================================
   // INIT
   // ===================================================
