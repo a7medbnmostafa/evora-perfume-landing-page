@@ -1,0 +1,782 @@
+{
+  "fragranceFamilies": [
+    "شرقي",
+    "خشبي",
+    "حلو",
+    "منعش",
+    "دخاني",
+    "عودي",
+    "زهري"
+  ],
+  "genders": [
+    {
+      "id": "men",
+      "label": "رجالي"
+    },
+    {
+      "id": "women",
+      "label": "نسائي"
+    },
+    {
+      "id": "unisex",
+      "label": "يونيسكس"
+    }
+  ],
+  "tiers": [
+    {
+      "id": "standard",
+      "label": "Standard"
+    },
+    {
+      "id": "plus50",
+      "label": "Plus 50"
+    },
+    {
+      "id": "plus80",
+      "label": "Plus 80"
+    }
+  ],
+  "products": [
+    {
+      "id": "erba-pura",
+      "image": "assets/img/erba-pura.webp",
+      "name": "إيربابورا زيرجوف",
+      "latin": "Erba Pura",
+      "gender": "unisex",
+      "families": ["حلو", "منعش", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة فاخرة تجمع بين الفواكه المنعشة والحلاوة الدافئة.",
+      "notes": {
+        "top": ["البرتقال", "الليمون", "الفواكه"],
+        "heart": ["الفانيليا", "المسك"],
+        "base": ["العنبر", "المسك الأبيض"]
+      }
+    },
+    {
+      "id": "sauvage-dior",
+      "image": "assets/img/sauvage-dior.webp",
+      "name": "سوفاج ديور",
+      "latin": "Sauvage",
+      "gender": "men",
+      "families": ["منعش", "خشبي", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "عطر رجالي منعش وقوي بطابع خشبي شرقي.",
+      "notes": {
+        "top": ["البرغموت", "الفلفل"],
+        "heart": ["لافندر", "إبرة الراعي"],
+        "base": ["الأمبروكسان", "الأخشاب"]
+      }
+    },
+    {
+      "id": "desire-blue",
+      "image": "assets/img/desire-blue.webp",
+      "name": "ديزاير بلو",
+      "latin": "Desire Blue",
+      "gender": "men",
+      "families": ["منعش", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة منعشة وأنيقة بطابع رجالي هادئ.",
+      "notes": {
+        "top": ["الحمضيات", "الفواكه"],
+        "heart": ["الأزهار", "التوابل"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "silver-scent",
+      "image": "assets/img/silver-scent.webp",
+      "name": "سلفر سنت",
+      "latin": "Silver Scent",
+      "gender": "men",
+      "families": ["شرقي", "خشبي", "منعش"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": true,
+      "isFeatured": true,
+      "desc": "عطر رجالي قوي يجمع بين الانتعاش والدفء الشرقي.",
+      "notes": {
+        "top": ["الليمون", "البرتقال"],
+        "heart": ["إكليل الجبل", "جوزة الطيب"],
+        "base": ["العود", "التونكا", "المسك"]
+      }
+    },
+    {
+      "id": "amir-aloud",
+      "image": "assets/img/amir-aloud.webp",
+      "name": "أمير العود",
+      "latin": "Amir Al Oud",
+      "gender": "men",
+      "families": ["عودي", "شرقي", "دخاني"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": true,
+      "isFeatured": true,
+      "desc": "تركيبة شرقية فاخرة بطابع العود الدافئ والدخاني.",
+      "notes": {
+        "top": ["الفلفل", "الزعفران"],
+        "heart": ["الورد", "العود"],
+        "base": ["العنبر", "المسك", "الأخشاب"]
+      }
+    },
+    {
+      "id": "bleu-de-chanel",
+      "image": "assets/img/bleu-de-chanel.webp",
+      "name": "بلو دي شانيل",
+      "latin": "Bleu de Chanel",
+      "gender": "men",
+      "families": ["منعش", "خشبي", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": true,
+      "isFeatured": true,
+      "desc": "رائحة رجالية أنيقة تجمع بين الانتعاش والأخشاب الدافئة.",
+      "notes": {
+        "top": ["الليمون", "الجريب فروت"],
+        "heart": ["الزنجبيل", "الياسمين"],
+        "base": ["الأرز", "الصندل", "البخور"]
+      }
+    },
+    {
+      "id": "open",
+      "image": "assets/img/open.webp",
+      "name": "أوبن",
+      "latin": "Open",
+      "gender": "unisex",
+      "families": ["منعش", "زهري", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة مشرقة ومنعشة بطابع ناعم ومتوازن.",
+      "notes": {
+        "top": ["الحمضيات", "الفواكه"],
+        "heart": ["الأزهار"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "madawi",
+      "image": "assets/img/midawi.jpg",
+      "name": "مضاوي",
+      "latin": "Madawi",
+      "gender": "women",
+      "families": ["حلو", "زهري", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": true,
+      "isFeatured": true,
+      "desc": "عطر أنثوي فاخر يجمع بين الحلاوة واللمسات الزهرية الشرقية.",
+      "notes": {
+        "top": ["الفواكه", "الأناناس"],
+        "heart": ["الياسمين", "الورد"],
+        "base": ["المسك", "الفانيليا", "الأخشاب"]
+      }
+    },
+    {
+      "id": "bmw",
+      "image": "assets/img/bmw.webp",
+      "name": "بي إم دبليو",
+      "latin": "BMW",
+      "gender": "men",
+      "families": ["منعش", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "عطر رجالي منعش وأنيق بطابع خشبي عصري.",
+      "notes": {
+        "top": ["الحمضيات", "التوابل"],
+        "heart": ["الأزهار", "الأخشاب"],
+        "base": ["المسك", "العنبر"]
+      }
+    },
+    {
+      "id": "pacific-chill",
+      "image": "assets/img/pacific-chill.webp",
+      "name": "باسيفيك تشيل",
+      "latin": "Pacific Chill",
+      "gender": "unisex",
+      "families": ["منعش", "حلو"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة منعشة ومشرقة مستوحاة من أجواء الصيف والطبيعة.",
+      "notes": {
+        "top": ["الليمون", "الكشمش"],
+        "heart": ["الفواكه", "الأعشاب"],
+        "base": ["المسك", "الأخشاب"]
+      }
+    },
+    {
+      "id": "212-men",
+      "image": "assets/img/212-men.webp",
+      "name": "212 مان",
+      "latin": "212 Men",
+      "gender": "men",
+      "families": ["منعش", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "عطر رجالي عصري يجمع بين الانتعاش والأخشاب.",
+      "notes": {
+        "top": ["الحمضيات", "الأعشاب"],
+        "heart": ["الزنجبيل", "البنفسج"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "al-wisam",
+      "image": "assets/img/al-wisam.webp",
+      "name": "الوسام",
+      "latin": "Al Wisam",
+      "gender": "men",
+      "families": ["شرقي", "خشبي", "زهري"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة شرقية أنيقة بطابع فاخر ومتوازن.",
+      "notes": {
+        "top": ["الحمضيات", "الفواكه"],
+        "heart": ["الورد", "الأزهار"],
+        "base": ["الأخشاب", "المسك", "العنبر"]
+      }
+    },
+    {
+      "id": "khamrah",
+      "image": "assets/img/khamrah.webp",
+      "name": "خمرة",
+      "latin": "Khamrah",
+      "gender": "unisex",
+      "families": ["حلو", "شرقي", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة دافئة وحلوة بطابع شرقي غني.",
+      "notes": {
+        "top": ["القرفة", "البرغموت"],
+        "heart": ["التمر", "البرالين"],
+        "base": ["الفانيليا", "العنبر", "التونكا"]
+      }
+    },
+    {
+      "id": "khamrah-qahwa",
+      "image": "assets/img/khamrah-qahwa.webp",
+      "name": "خمرة قهوة",
+      "latin": "Khamrah Qahwa",
+      "gender": "unisex",
+      "families": ["حلو", "شرقي", "دخاني"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة دافئة غنية تجمع بين الحلاوة واللمسة القهوية.",
+      "notes": {
+        "top": ["القرفة", "الهيل"],
+        "heart": ["القهوة", "البرالين"],
+        "base": ["الفانيليا", "المسك", "العنبر"]
+      }
+    },
+    {
+      "id": "oud-bouquet",
+      "image": "assets/img/oud-bouquet.webp",
+      "name": "عود بوكيت",
+      "latin": "Oud Bouquet",
+      "gender": "unisex",
+      "families": ["عودي", "شرقي", "حلو"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "تركيبة شرقية غنية بطابع العود والحلاوة الدافئة.",
+      "notes": {
+        "top": ["الفلفل", "الزعفران"],
+        "heart": ["العود", "الورد"],
+        "base": ["الفانيليا", "العنبر", "الأخشاب"]
+      }
+    },
+    {
+      "id": "oud-azraq",
+      "image": "assets/img/oud-azraq.webp",
+      "name": "عود أزرق",
+      "latin": "Oud Azraq",
+      "gender": "men",
+      "families": ["عودي", "خشبي", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة عودية قوية بطابع خشبي شرقي.",
+      "notes": {
+        "top": ["التوابل", "الحمضيات"],
+        "heart": ["العود", "الأخشاب"],
+        "base": ["العنبر", "المسك"]
+      }
+    },
+    {
+      "id": "ward-taif",
+      "image": "assets/img/ward-taif.webp",
+      "name": "ورد الطائف",
+      "latin": "Ward Taif",
+      "gender": "women",
+      "families": ["زهري", "حلو", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة زهرية ناعمة تتمحور حول الورد بلمسة شرقية.",
+      "notes": {
+        "top": ["الورد", "الفواكه"],
+        "heart": ["ورد الطائف", "الياسمين"],
+        "base": ["المسك", "العنبر"]
+      }
+    },
+    {
+      "id": "acqua-di-gio",
+      "image": "assets/img/acqua-di-gio.webp",
+      "name": "أكوا دي جيو",
+      "latin": "Acqua di Gio",
+      "gender": "men",
+      "families": ["منعش", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة منعشة ونظيفة بطابع بحري وخشبي.",
+      "notes": {
+        "top": ["الحمضيات", "النوتات البحرية"],
+        "heart": ["الأعشاب", "الأزهار"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "lacoste-white",
+      "image": "assets/img/lacoste-white.webp",
+      "name": "لاكوست وايت",
+      "latin": "Lacoste White",
+      "gender": "men",
+      "families": ["منعش", "زهري", "خشبي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة نظيفة ومنعشة بطابع شبابي وأنيق.",
+      "notes": {
+        "top": ["الجريب فروت", "الليمون"],
+        "heart": ["البنفسج", "الياسمين"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "bianco-latte",
+      "image": "assets/img/bianco-latte.webp",
+      "name": "بيانكو لاتيه",
+      "latin": "Bianco Latte",
+      "gender": "women",
+      "families": ["حلو", "شرقي"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة كريمية حلوة ودافئة بطابع فاخر.",
+      "notes": {
+        "top": ["الكراميل"],
+        "heart": ["العسل", "الفانيليا"],
+        "base": ["المسك", "الكومارين"]
+      }
+    },
+    {
+      "id": "mon-blue",
+      "image": "assets/img/mon-blue.webp",
+      "name": "مون بلو",
+      "latin": "Mon Blue",
+      "gender": "women",
+      "families": ["زهري", "حلو", "منعش"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة أنثوية ناعمة تجمع بين الانتعاش والحلاوة.",
+      "notes": {
+        "top": ["الفواكه", "الحمضيات"],
+        "heart": ["الزهور", "الياسمين"],
+        "base": ["المسك", "الفانيليا"]
+      }
+    },
+    {
+      "id": "wanted-azzaro",
+      "image": "assets/img/wanted-azzaro.webp",
+      "name": "وانتد أزارو",
+      "latin": "Wanted",
+      "gender": "men",
+      "families": ["شرقي", "خشبي", "منعش"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "عطر رجالي قوي بطابع عصري شرقي خشبي.",
+      "notes": {
+        "top": ["الليمون", "الزنجبيل"],
+        "heart": ["التوابل", "الأخشاب"],
+        "base": ["التونكا", "العنبر"]
+      }
+    },
+    {
+      "id": "hajar-aswad",
+      "image": "assets/img/hajar-aswad.webp",
+      "name": "حجر أسود",
+      "latin": "Hajar Aswad",
+      "gender": "unisex",
+      "families": ["شرقي", "عودي", "دخاني"],
+      "tier": "standard",
+      "price": 450,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة شرقية عميقة بطابع داكن ودافئ.",
+      "notes": {
+        "top": ["التوابل", "الزعفران"],
+        "heart": ["العود", "الورد"],
+        "base": ["العنبر", "المسك", "الأخشاب"]
+      }
+      
+    },
+
+
+    {
+      "id": "sauvage-elixir",
+      "image": "assets/img/sauvage-elixir.webp",
+      "name": "سوفاج إليكسير",
+      "latin": "Sauvage Elixir",
+      "gender": "men",
+      "families": ["شرقي", "خشبي", "دخاني"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة رجالية مركزة بطابع خشبي شرقي عميق.",
+      "notes": {
+        "top": ["القرفة", "جوزة الطيب"],
+        "heart": ["لافندر", "توابل"],
+        "base": ["الأخشاب", "العنبر", "العرعر"]
+      }
+    },
+    {
+      "id": "red-tobacco",
+      "image": "assets/img/red-tobacco.webp",
+      "name": "ريد توباكو",
+      "latin": "Red Tobacco",
+      "gender": "men",
+      "families": ["دخاني", "شرقي", "خشبي"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة قوية ودافئة بطابع تبغ وتوابل وأخشاب.",
+      "notes": {
+        "top": ["القرفة", "الزعفران", "التبغ"],
+        "heart": ["البخور", "الباتشولي"],
+        "base": ["التبغ", "العنبر", "الأخشاب"]
+      }
+    },
+    {
+      "id": "oud-omani",
+      "image": "assets/img/oud-omani.webp",
+      "name": "عود عماني",
+      "latin": "Oud Omani",
+      "gender": "unisex",
+      "families": ["عودي", "شرقي", "دخاني"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "تركيبة عودية شرقية عميقة بطابع فاخر.",
+      "notes": {
+        "top": ["الزعفران", "التوابل"],
+        "heart": ["العود", "الورد"],
+        "base": ["العنبر", "الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "oud-kalimat",
+      "image": "assets/img/oud-kalimat.webp",
+      "name": "عود كلمات",
+      "latin": "Oud Kalimat",
+      "gender": "unisex",
+      "families": ["عودي", "حلو", "شرقي"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة عودية دافئة تجمع بين الحلاوة والعمق الشرقي.",
+      "notes": {
+        "top": ["الفواكه", "التوابل"],
+        "heart": ["العود", "العسل"],
+        "base": ["العنبر", "المسك", "الفانيليا"]
+      }
+    },
+    {
+      "id": "one-man-show",
+      "image": "assets/img/one-man-show.webp",
+      "name": "وان مان شو",
+      "latin": "One Man Show",
+      "gender": "men",
+      "families": ["خشبي", "شرقي", "دخاني"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "عطر رجالي كلاسيكي بطابع خشبي شرقي واضح.",
+      "notes": {
+        "top": ["الأعشاب", "التوابل"],
+        "heart": ["الأخشاب", "الجلد"],
+        "base": ["العنبر", "المسك"]
+      }
+    },
+    {
+      "id": "althaer-de-marly",
+      "image": "assets/img/althaer-de-marly.webp",
+      "name": "الثائر من ديمارلي",
+      "latin": "Layton",
+      "gender": "unisex",
+      "families": ["حلو", "شرقي", "خشبي"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة فاخرة تجمع بين الحلاوة والدفء والأخشاب.",
+      "notes": {
+        "top": ["التفاح", "البرغموت"],
+        "heart": ["الياسمين", "البنفسج"],
+        "base": ["الفانيليا", "الفلفل", "الأخشاب"]
+      }
+    },
+    {
+      "id": "of-fire",
+      "image": "assets/img/of-fire.webp",
+      "name": "أوف فاير",
+      "latin": "Of Fire",
+      "gender": "unisex",
+      "families": ["دخاني", "شرقي", "خشبي"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة دافئة ومكثفة بطابع شرقي دخاني.",
+      "notes": {
+        "top": ["التوابل", "الحمضيات"],
+        "heart": ["البخور", "الأخشاب"],
+        "base": ["العنبر", "المسك"]
+      }
+    },
+    {
+      "id": "yara",
+      "image": "assets/img/yara.webp",
+      "name": "يارا",
+      "latin": "Yara",
+      "gender": "women",
+      "families": ["حلو", "زهري", "منعش"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة أنثوية حلوة وناعمة بطابع بودري وفاكهي.",
+      "notes": {
+        "top": ["الفواكه", "الحمضيات"],
+        "heart": ["الأزهار", "الفانيليا"],
+        "base": ["المسك", "الأخشاب"]
+      }
+    },
+    {
+      "id": "yara-candy",
+      "image": "assets/img/yara-candy.webp",
+      "name": "يارا كاندي",
+      "latin": "Yara Candy",
+      "gender": "women",
+      "families": ["حلو", "زهري"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة حلوة ومرحة بطابع فاكهي وكريمي.",
+      "notes": {
+        "top": ["الفواكه", "الحمضيات"],
+        "heart": ["الحلوى", "الأزهار"],
+        "base": ["الفانيليا", "المسك"]
+      }
+    },
+    {
+      "id": "burberry-her",
+      "image": "assets/img/burberry-her.webp",
+      "name": "بربري هير",
+      "latin": "Burberry Her",
+      "gender": "women",
+      "families": ["حلو", "زهري", "منعش"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة أنثوية فاكهية حلوة بطابع عصري.",
+      "notes": {
+        "top": ["التوت", "الفراولة"],
+        "heart": ["الياسمين", "البنفسج"],
+        "base": ["المسك", "العنبر"]
+      }
+    },
+    {
+      "id": "paris-hilton",
+      "image": "assets/img/paris-hilton.webp",
+      "name": "باريس هيلتون",
+      "latin": "Paris Hilton",
+      "gender": "women",
+      "families": ["زهري", "حلو", "منعش"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة أنثوية مشرقة وحلوة بطابع زهري وفاكهي.",
+      "notes": {
+        "top": ["الفواكه", "الشمام"],
+        "heart": ["الأزهار", "الياسمين"],
+        "base": ["المسك", "الأخشاب"]
+      }
+    },
+    {
+      "id": "nishane-hacivat",
+      "image": "assets/img/nishane-hacivat.webp",
+      "name": "نيشان هاسيفات",
+      "latin": "Hacivat",
+      "gender": "unisex",
+      "families": ["منعش", "خشبي", "زهري"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "رائحة مشرقة ومنعشة بطابع حمضي وخشبي فاخر.",
+      "notes": {
+        "top": ["الأناناس", "الجريب فروت"],
+        "heart": ["الياسمين", "الباتشولي"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "rosendo-mateu-5",
+      "image": "assets/img/rosendo-mateu-5.webp",
+      "name": "روسيندو ماتيو 5",
+      "latin": "Rosendo Mateu No. 5",
+      "gender": "unisex",
+      "families": ["زهري", "شرقي", "حلو"],
+      "tier": "plus50",
+      "price": 500,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "تركيبة فاخرة ناعمة تجمع بين الزهور والدفء الشرقي.",
+      "notes": {
+        "top": ["الحمضيات", "الفواكه"],
+        "heart": ["الورد", "الياسمين"],
+        "base": ["المسك", "العنبر", "الفانيليا"]
+      }
+    },
+    {
+      "id": "red-tobacco-premium",
+      "image": "assets/img/red-tobacco-premium.webp",
+      "name": "ريد توباكو بريميوم",
+      "latin": "Red Tobacco Premium",
+      "gender": "men",
+      "families": ["دخاني", "شرقي", "خشبي"],
+      "tier": "plus80",
+      "price": 550,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "نسخة أكثر فخامة وتركيزًا من الطابع الدافئ والتبغي.",
+      "notes": {
+        "top": ["التبغ", "القرفة", "التوابل"],
+        "heart": ["البخور", "الأخشاب"],
+        "base": ["العنبر", "المسك", "التبغ"]
+      }
+    },
+    {
+      "id": "nishane-hacivat-premium",
+      "image": "assets/img/nishane-hacivat-premium.webp",
+      "name": "نيشان هاسيفات بريميوم",
+      "latin": "Hacivat Premium",
+      "gender": "unisex",
+      "families": ["منعش", "خشبي", "زهري"],
+      "tier": "plus80",
+      "price": 550,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "تركيبة فاخرة بطابع منعش وخشبي مشرق.",
+      "notes": {
+        "top": ["الأناناس", "الحمضيات"],
+        "heart": ["الياسمين", "الباتشولي"],
+        "base": ["الأخشاب", "المسك"]
+      }
+    },
+    {
+      "id": "pacific-chill-premium",
+      "image": "assets/img/pacific-chill-premium.webp",
+      "name": "باسيفيك تشيل بريميوم",
+      "latin": "Pacific Chill Premium",
+      "gender": "unisex",
+      "families": ["منعش", "حلو"],
+      "tier": "plus80",
+      "price": 550,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "تركيبة منعشة وفاخرة بطابع صيفي مشرق.",
+      "notes": {
+        "top": ["الحمضيات", "الفواكه"],
+        "heart": ["الأعشاب", "الفواكه"],
+        "base": ["المسك", "الأخشاب"]
+      }
+    },
+    {
+      "id": "erba-pura-premium",
+      "image": "assets/img/erba-pura-premium.webp",
+      "name": "إيربابورا بريميوم",
+      "latin": "Erba Pura Premium",
+      "gender": "unisex",
+      "families": ["حلو", "منعش", "شرقي"],
+      "tier": "plus80",
+      "price": 550,
+      "isBestseller": false,
+      "isFeatured": true,
+      "desc": "تركيبة فاخرة بطابع فاكهي حلو ومنعش.",
+      "notes": {
+        "top": ["الحمضيات", "الفواكه"],
+        "heart": ["الفانيليا", "المسك"],
+        "base": ["العنبر", "المسك الأبيض"]
+      }
+    },
+    {
+      "id": "mango-mena-di",
+      "image": "assets/img/mango-mena-di.webp",
+      "name": "مانجو مينا دي",
+      "latin": "Mango Mena Di",
+      "gender": "women",
+      "families": ["حلو", "منعش", "زهري"],
+      "tier": "plus80",
+      "price": 550,
+      "isBestseller": false,
+      "isFeatured": false,
+      "desc": "رائحة فاكهية حلوة ومنعشة بطابع مشرق.",
+      "notes": {
+        "top": ["المانجو", "الفواكه"],
+        "heart": ["الأزهار"],
+        "base": ["المسك", "الفانيليا"]
+      }
+    }
+  ]
+}

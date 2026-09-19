@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>المتجر | Évora Perfumes</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts & Font Awesome CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Tailwind Configuration (Évora Design Tokens) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              emerald: '#0B2B26',
+              emeraldDark: '#051815',
+              emeraldLight: '#164E45',
+              gold: '#D4AF37',
+              goldDark: '#AA8B2C',
+              goldLight: '#F3E5AB',
+              cream: '#FDFBF7'
+            }
+          },
+          fontFamily: {
+            sans: ['Cairo', 'sans-serif'],
+            serif: ['Amiri', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA8B2C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-emeraldDark text-brand-cream font-sans antialiased min-h-screen flex flex-col selection:bg-brand-gold selection:text-brand-emeraldDark">
+
+  <!-- =========================================================
+       1. NAVBAR
+  ========================================================== -->
+  <nav class="sticky top-0 z-50 bg-brand-emeraldDark/95 backdrop-blur-md border-b border-brand-gold/20 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full border border-brand-gold/40 flex items-center justify-center bg-brand-emerald group-hover:border-brand-gold transition-colors">
+            <span class="font-serif font-bold text-brand-gold text-xl">É</span>
+          </div>
+          <span class="font-serif text-2xl font-bold tracking-wider gold-gradient-text">ÉVORA</span>
+        </a>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-semibold">
+          <a href="index.html" class="text-brand-cream/80 hover:text-brand-gold transition-colors">الرئيسية</a>
+          <a href="shop.html" class="text-brand-gold border-b-2 border-brand-gold pb-1 font-bold">المتجر</a>
+          <a href="index.html#quiz" class="text-brand-cream/80 hover:text-brand-gold transition-colors">اكتشف عطرك</a>
+          <a href="index.html#about" class="text-brand-cream/80 hover:text-brand-gold transition-colors">عن إيفورا</a>
+        </div>
+
+        <!-- Cart Icon & Actions -->
+        <div class="flex items-center gap-4">
+          <a href="cart.html" class="relative p-2 text-brand-cream hover:text-brand-gold transition-colors" title="سلة المشتريات">
+            <i class="fa-solid fa-bag-shopping text-xl"></i>
+            <span id="nav-cart-count" class="absolute -top-1 -right-1 bg-brand-gold text-brand-emeraldDark font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-md">
+              0
+            </span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button id="mobile-menu-btn" type="button" class="md:hidden p-2 text-brand-cream hover:text-brand-gold focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-emerald border-b border-brand-gold/20 px-4 pt-2 pb-6 space-y-3">
+      <a href="index.html" class="block py-2 text-brand-cream hover:text-brand-gold nav-link-mobile">الرئيسية</a>
+      <a href="shop.html" class="block py-2 text-brand-gold font-bold nav-link-mobile">المتجر</a>
+      <a href="index.html#quiz" class="block py-2 text-brand-cream hover:text-brand-gold nav-link-mobile">اكتشف عطرك</a>
+      <a href="index.html#about" class="block py-2 text-brand-cream hover:text-brand-gold nav-link-mobile">عن إيفورا</a>
+    </div>
+  </nav>
+
+  <!-- =========================================================
+       2. LUXURY SHOP HERO
+  ========================================================== -->
+  <header class="py-14 sm:py-20 bg-gradient-to-b from-brand-emerald to-brand-emeraldDark border-b border-brand-gold/10 relative overflow-hidden text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-3">
+      <span class="text-brand-gold font-medium text-xs sm:text-sm tracking-[0.25em] uppercase block">
+        ÉVORA COLLECTION
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-bold font-serif gold-gradient-text leading-tight">
+        عطور صُممت لتترك أثرًا
+      </h1>
+      <p class="text-brand-cream/70 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed pt-1">
+        تشكيلة استثنائية من العطور الفاخرة المبتكرة بعناية لترافق حضورك وتعبّر عن هويتك.
+      </p>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       3. MAIN SHOP SECTION (FILTERS, SORT & PRODUCTS)
+  ========================================================== -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-8">
+    
+    <!-- Filter Controls Panel -->
+    <div class="bg-brand-emerald/40 border border-brand-gold/20 rounded-2xl p-5 sm:p-6 backdrop-blur-md space-y-6">
+      
+      <!-- Top Row: Live Search Input -->
+      <div class="w-full max-w-xl mx-auto relative">
+        <input
+          type="text"
+          id="shop-search-input"
+          placeholder="ابحث عن اسم العطر، العائلة، أو المكونات..."
+          class="w-full bg-brand-emeraldDark/90 border border-brand-gold/30 rounded-xl px-4 py-3 pr-11 text-sm text-brand-cream focus:outline-none focus:border-brand-gold transition-colors placeholder:text-brand-cream/40 shadow-inner"
+        >
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-brand-gold/60 text-sm"></i>
+      </div>
+
+      <div class="h-px bg-brand-gold/10 w-full"></div>
+
+      <!-- Filters Rows Container -->
+      <div class="space-y-4">
+        
+        <!-- 1. Gender Filter -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <span class="text-xs font-bold text-brand-gold min-w-[90px]">النوع:</span>
+          <div id="gender-filters-container" class="flex flex-wrap gap-2">
+            <button type="button" data-filter-gender="all" class="gender-btn active-filter px-3.5 py-1.5 rounded-lg text-xs font-semibold border border-brand-gold bg-brand-gold text-brand-emeraldDark transition-all">الكل</button>
+            <button type="button" data-filter-gender="men" class="gender-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold border border-brand-gold/20 bg-brand-emeraldDark/60 text-brand-cream/80 hover:border-brand-gold/60 transition-all">رجالي</button>
+            <button type="button" data-filter-gender="women" class="gender-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold border border-brand-gold/20 bg-brand-emeraldDark/60 text-brand-cream/80 hover:border-brand-gold/60 transition-all">نسائي</button>
+            <button type="button" data-filter-gender="unisex" class="gender-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold border border-brand-gold/20 bg-brand-emeraldDark/60 text-brand-cream/80 hover:border-brand-gold/60 transition-all">يونيسكس</button>
+          </div>
+        </div>
+
+        <!-- 2. Fragrance Family Filter (Dynamic Container) -->
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <span class="text-xs font-bold text-brand-gold min-w-[90px]">العائلة العطرية:</span>
+          <div id="family-filters-container" class="flex flex-wrap gap-2">
+            <!-- Dynamic Family Filter Buttons injected via JS -->
+            <button type="button" data-filter-family="all" class="family-btn active-filter px-3.5 py-1.5 rounded-lg text-xs font-semibold border border-brand-gold bg-brand-gold text-brand-emeraldDark transition-all">الكل</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Toolbar: Products Count & Sorting Selector -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-brand-gold/10 pb-4">
+      <div class="text-xs sm:text-sm text-brand-cream/70 font-medium">
+        عرض <span id="products-count" class="text-brand-gold font-bold">0</span> عطرًا
+      </div>
+
+      <div class="flex items-center gap-2 self-end sm:self-auto">
+        <label for="shop-sort-select" class="text-xs text-brand-cream/60 whitespace-nowrap">ترتيب حسب:</label>
+        <select
+          id="shop-sort-select"
+          class="bg-brand-emerald border border-brand-gold/30 text-brand-cream text-xs rounded-xl px-3 py-2 focus:outline-none focus:border-brand-gold transition-colors cursor-pointer"
+        >
+          <option value="featured">المميز</option>
+          <option value="bestseller">الأكثر مبيعًا</option>
+          <option value="price-low">السعر: الأقل إلى الأعلى</option>
+          <option value="price-high">السعر: الأعلى إلى الأقل</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid Container -->
+    <div id="shop-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <!-- Dynamic Cards rendered via JS -->
+    </div>
+
+    <!-- Empty State Message -->
+    <div id="no-products-msg" class="hidden text-center py-16 space-y-4">
+      <i class="fa-solid fa-box-open text-4xl text-brand-gold/40"></i>
+      <h3 class="text-lg font-bold text-brand-cream">لا توجد عطور تطابق خياراتك</h3>
+      <p class="text-xs text-brand-cream/60">جرب البحث بكلمات أخرى أو تغيير الفلاتر المحددة.</p>
+      <button
+        type="button"
+        id="clear-filters-btn"
+        class="inline-flex items-center gap-2 bg-brand-emerald border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-xs font-bold px-4 py-2.5 rounded-xl transition-all active:scale-95"
+      >
+        <i class="fa-solid fa-rotate-left"></i>
+        <span>إعادة ضبط البحث والفلاتر</span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- =========================================================
+       4. FOOTER
+  ========================================================== -->
+  <footer class="bg-brand-emerald border-t border-brand-gold/20 mt-20 pt-12 pb-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-brand-gold/10">
+        
+        <!-- Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full border border-brand-gold flex items-center justify-center bg-brand-emeraldDark">
+              <span class="font-serif font-bold text-brand-gold text-lg">É</span>
+            </div>
+            <span class="font-serif text-xl font-bold gold-gradient-text">ÉVORA</span>
+          </div>
+          <p class="text-xs sm:text-sm text-brand-cream/70 leading-relaxed">
+            دار عطور فاخرة تبتكر توقيعات عطرية فريدة تعكس الأصالة والتميز في كل قطرة.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-brand-gold uppercase tracking-wider mb-3">روابط سريعة</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-brand-cream/80">
+            <li><a href="index.html" class="hover:text-brand-gold transition-colors">الرئيسية</a></li>
+            <li><a href="shop.html" class="hover:text-brand-gold transition-colors">المتجر</a></li>
+            <li><a href="index.html#quiz" class="hover:text-brand-gold transition-colors">مستشار العطور</a></li>
+            <li><a href="cart.html" class="hover:text-brand-gold transition-colors">سلة المشتريات</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Social -->
+        <div class="space-y-3">
+          <h4 class="text-sm font-bold text-brand-gold uppercase tracking-wider mb-3">تواصل معنا</h4>
+          <a href="https://wa.me/201000000000" target="_blank" class="text-xs text-brand-cream/70 hover:text-brand-gold flex items-center gap-2 transition-colors">
+            <i class="fa-solid fa-phone text-brand-gold"></i>
+            <span>تواصل عبر الواتساب للطلبات الخاصة</span>
+          </a>
+          <div class="flex gap-3 pt-2">
+            <a href="https://instagram.com" target="_blank" class="w-9 h-9 rounded-full bg-brand-emeraldDark border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-emeraldDark transition-all" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/201000000000" target="_blank" class="w-9 h-9 rounded-full bg-brand-emeraldDark border border-brand-gold/30 flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-brand-emeraldDark transition-all" title="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-6 text-center text-xs text-brand-cream/50">
+        جميع الحقوق محفوظة &copy; 2026 لـ <span class="text-brand-gold font-bold">Évora Perfumes</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       5. TOAST NOTIFICATION CONTAINER
+  ========================================================== -->
+  <div id="toast-container" class="fixed bottom-5 left-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Navbar Mobile Menu Toggle Script -->
+
+  <script src="../js/shop.js"></script>
+
+</body>
+</html>
