@@ -44,7 +44,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     perfumeCatalog = Array.isArray(data.products) ? data.products : [];
-    fragranceFamilies = Array.isArray(data.fragranceFamilies) ? data.fragranceFamilies : [];
+    fragranceFamilies = Array.isArray(data.fragranceFamilies)
+      ? data.fragranceFamilies
+      : [];
     genders = Array.isArray(data.genders) ? data.genders : [];
     tiers = Array.isArray(data.tiers) ? data.tiers : [];
   } catch (e) {
@@ -59,7 +61,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
       const c = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
       return Array.isArray(c) ? c : [];
-    } catch { return []; }
+    } catch {
+      return [];
+    }
   };
   const saveCart = (cart) => {
     localStorage.setItem(CART_KEY, JSON.stringify(cart));
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const addToCart = (productId, qty = 1) => {
     const product = perfumeCatalog.find(
-      (p) => String(p.id) === String(productId)
+      (p) => String(p.id) === String(productId),
     );
     if (!product) {
       console.warn("ÉVORA: product not found:", productId);
@@ -121,12 +125,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   // =========================================================
   // MOBILE MENU
   // =========================================================
-  const menuBtn = document.getElementById("menu-btn") || document.getElementById("mobile-menu-btn");
+  const menuBtn =
+    document.getElementById("menu-btn") ||
+    document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
-  menuBtn?.addEventListener("click", () => mobileMenu?.classList.toggle("hidden"));
-  mobileMenu?.querySelectorAll("a").forEach((a) =>
-    a.addEventListener("click", () => mobileMenu.classList.add("hidden"))
+  menuBtn?.addEventListener("click", () =>
+    mobileMenu?.classList.toggle("hidden"),
   );
+  mobileMenu
+    ?.querySelectorAll("a")
+    .forEach((a) =>
+      a.addEventListener("click", () => mobileMenu.classList.add("hidden")),
+    );
 
   // =========================================================
   // SMOOTH ANCHORS
@@ -174,14 +184,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const updateQuizUI = () => {
     Object.entries(QS.steps).forEach(([n, el]) =>
-      el?.classList.toggle("hidden", Number(n) !== state.step)
+      el?.classList.toggle("hidden", Number(n) !== state.step),
     );
     QS.result?.classList.add("hidden");
 
-    if (QS.progress)
-      QS.progress.style.width = `${(state.step / 3) * 100}%`;
-    if (QS.indicator)
-      QS.indicator.textContent = `السؤال ${state.step} من 3`;
+    if (QS.progress) QS.progress.style.width = `${(state.step / 3) * 100}%`;
+    if (QS.indicator) QS.indicator.textContent = `السؤال ${state.step} من 3`;
     if (QS.prev) QS.prev.classList.toggle("invisible", state.step === 1);
     if (QS.next) QS.next.classList.remove("hidden");
 
@@ -220,14 +228,17 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   // Global for inline onclick (step 3 buttons in HTML)
-  window.selectOptionUI = (step, el) => selectOption(step, el.dataset.value, el);
+  window.selectOptionUI = (step, el) =>
+    selectOption(step, el.dataset.value, el);
 
   // Step 1 buttons
-  document.querySelectorAll(".opt-btn-1").forEach((btn) =>
-    btn.addEventListener("click", () =>
-      selectOption(1, btn.dataset.value, btn)
-    )
-  );
+  document
+    .querySelectorAll(".opt-btn-1")
+    .forEach((btn) =>
+      btn.addEventListener("click", () =>
+        selectOption(1, btn.dataset.value, btn),
+      ),
+    );
 
   // Render Step 2 family buttons dynamically
   const renderQuizFamilies = () => {
@@ -239,15 +250,17 @@ document.addEventListener("DOMContentLoaded", async () => {
         class="opt-btn-2 group relative p-4 rounded-xl border border-brand-gold/20 bg-brand-emerald/40 hover:border-brand-gold/60 text-sm font-semibold text-brand-cream transition-all flex items-center justify-center gap-2">
         <span>${escapeAttr(f)}</span>
         <i class="fa-solid fa-check check-icon hidden text-brand-gold text-xs mr-auto"></i>
-      </button>`
+      </button>`,
       )
       .join("");
 
-    QS.familyBox.querySelectorAll(".opt-btn-2").forEach((btn) =>
-      btn.addEventListener("click", () =>
-        selectOption(2, btn.dataset.value, btn)
-      )
-    );
+    QS.familyBox
+      .querySelectorAll(".opt-btn-2")
+      .forEach((btn) =>
+        btn.addEventListener("click", () =>
+          selectOption(2, btn.dataset.value, btn),
+        ),
+      );
   };
   renderQuizFamilies();
 
@@ -282,9 +295,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (state.gender && p.gender === state.gender) s += 5;
       if (state.family && p.families?.includes(state.family)) s += 5;
       if (state.vibe && VIBE_MAP[state.vibe]) {
-        s += VIBE_MAP[state.vibe].filter((f) =>
-          p.families?.includes(f)
-        ).length * 2;
+        s +=
+          VIBE_MAP[state.vibe].filter((f) => p.families?.includes(f)).length *
+          2;
       }
       if (p.isFeatured) s += 1;
       if (p.isBestseller) s += 1;
@@ -329,7 +342,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       QS.resultFamilies.innerHTML = (product.families || [])
         .map(
           (f) =>
-            `<span class="px-2 py-1 rounded-lg bg-brand-gold/5 border border-brand-gold/10 text-brand-gold text-[11px]">${escapeAttr(f)}</span>`
+            `<span class="px-2 py-1 rounded-lg bg-brand-gold/5 border border-brand-gold/10 text-brand-gold text-[11px]">${escapeAttr(f)}</span>`,
         )
         .join("");
     }
@@ -409,7 +422,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   bestGrid?.addEventListener("click", (e) => {
     const btn = e.target.closest("[data-add]");
     if (!btn) return;
-    const p = perfumeCatalog.find((x) => String(x.id) === String(btn.dataset.add));
+    const p = perfumeCatalog.find(
+      (x) => String(x.id) === String(btn.dataset.add),
+    );
     if (p && addToCart(p.id, 1)) showToast(`تمت إضافة ${p.name} إلى السلة`);
   });
 
@@ -417,10 +432,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   // SIGNATURE PRODUCT (dynamic from JSON)
   // =========================================================
   const renderSignature = () => {
+    // بندور على عطر "مضاوي" أو أول عطر مميز في الملف
     const sig =
       perfumeCatalog.find((p) => p.id === "madawi") ||
       perfumeCatalog.find((p) => p.isFeatured) ||
       perfumeCatalog[0];
+
     if (!sig) return;
 
     const set = (id, val) => {
@@ -428,28 +445,42 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (el) el.textContent = val;
     };
 
+    // الصورة
     const img = document.getElementById("signature-img");
     if (img) {
       img.src = getProductImage(sig.image);
       img.alt = sig.name;
       img.onerror = () => (img.src = FALLBACK_IMG);
     }
+
+    // العناوين والوصف
+    set("signature-main-title", `${sig.name} — ${sig.latin || ""}`);
     set("signature-title", `${sig.name} — ${sig.latin || ""}`);
     set("signature-desc", sig.desc || "");
+
+    // النوتات
     set("signature-top-notes", (sig.notes?.top || []).join("، "));
     set("signature-heart-notes", (sig.notes?.heart || []).join("، "));
     set("signature-base-notes", (sig.notes?.base || []).join("، "));
+
+    // السعر
     set("signature-price", `${formatPrice(sig.price)} ج.م`);
 
+    // زرار الإضافة للسلة
     const addBtn = document.getElementById("signature-add-btn");
     if (addBtn) {
       addBtn.onclick = () => {
-        if (addToCart(sig.id, 1)) showToast(`تمت إضافة ${sig.name} إلى السلة`);
+        if (addToCart(sig.id, 1))
+          showToast(`تمت إضافة ${sig.name} إلى السلة`);
       };
     }
+
+    // لينك التفاصيل
     const details = document.getElementById("signature-details-link");
-    if (details) details.href = `product.html?id=${encodeURIComponent(sig.id)}`;
+    if (details)
+      details.href = `product.html?id=${encodeURIComponent(sig.id)}`;
   };
+
   renderSignature();
 
   // =========================================================

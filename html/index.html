@@ -802,7 +802,7 @@
       </div>
     </section>
 
-    <!-- =========================================================
+<!-- =========================================================
 *         SECTION 4: SIGNATURE PRODUCT
 *    ========================================================== -->
 
@@ -815,10 +815,10 @@
           >
             العطر الأيقوني
           </span>
-          <h2
+          <h2 id="signature-main-title"
             class="text-3xl sm:text-4xl font-bold font-serif-custom text-white"
           >
-            مضاوي (MIDAW) — بصمة من نور
+            -- <!-- سيتم ملؤه من JS -->
           </h2>
           <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
         </div>
@@ -832,8 +832,9 @@
             <!-- Product Image -->
             <div class="relative group overflow-hidden rounded-2xl">
               <img
-                src="../assets/img/midawi.jpg"
-                alt="عطر مضاوي"
+                id="signature-img"
+                src="../assets/img/evora.jpeg"
+                alt="عطر أيقوني"
                 class="w-full h-[320px] sm:h-[380px] object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
               />
               <div
@@ -869,8 +870,8 @@
                     <h4 class="font-bold text-sm text-brand-goldLight">
                       المقدمة (Top Notes)
                     </h4>
-                    <p class="text-xs text-brand-cream/90">
-                      خوخ، زهر التفاح (Peach & Apple Blossom)
+                    <p id="signature-top-notes" class="text-xs text-brand-cream/90">
+                      --
                     </p>
                   </div>
                 </div>
@@ -887,8 +888,8 @@
                     <h4 class="font-bold text-sm text-brand-goldLight">
                       القلب (Middle Notes)
                     </h4>
-                    <p class="text-xs text-brand-cream/90">
-                      زهر الأناناس (Pineapple Blossom)
+                    <p id="signature-heart-notes" class="text-xs text-brand-cream/90">
+                      --
                     </p>
                   </div>
                 </div>
@@ -905,8 +906,8 @@
                     <h4 class="font-bold text-sm text-brand-goldLight">
                       القاعدة (Base Notes)
                     </h4>
-                    <p class="text-xs text-brand-cream/90">
-                      مسك، ورد بري، باتشولي (Musk, Wild Rose, Patchouli)
+                    <p id="signature-base-notes" class="text-xs text-brand-cream/90">
+                      --
                     </p>
                   </div>
                 </div>
@@ -931,14 +932,13 @@
                 >
                   Signature Collection
                 </span>
-                <h3
+                <h3 id="signature-title"
                   class="text-3xl font-bold text-white font-serif-custom mt-1"
                 >
-                  مضاوي — MIDAW
+                  --
                 </h3>
-                <p class="text-sm text-brand-cream/80 mt-2 leading-relaxed">
-                  تجسيد حقيقي للفخامة والشرقية المعاصرة. عطرٌ يُصمم ليدوم
-                  طويلاً، ويترك خلفك أثراً لا يُنسى في كل خطوة.
+                <p id="signature-desc" class="text-sm text-brand-cream/80 mt-2 leading-relaxed">
+                  --
                 </p>
               </div>
 
@@ -977,7 +977,7 @@
               >
                 <div class="flex items-center justify-between">
                   <span class="text-xs text-brand-cream/70"
-                    >السعر الحالي (100ml)</span
+                    >السعر الحالي</span
                   >
                   <span
                     class="text-xs bg-brand-gold/10 text-brand-gold border border-brand-gold/30 px-2.5 py-0.5 rounded-full font-semibold"
@@ -986,11 +986,8 @@
                   </span>
                 </div>
                 <div class="flex items-baseline gap-3">
-                  <span class="text-3xl font-extrabold text-brand-gold"
-                    >1,250 ج.م</span
-                  >
-                  <span class="text-sm text-brand-cream/50 line-through"
-                    >1,600 ج.م</span
+                  <span id="signature-price" class="text-3xl font-extrabold text-brand-gold"
+                    >--</span
                   >
                 </div>
               </div>
@@ -1003,7 +1000,6 @@
               <button
                 type="button"
                 id="signature-add-btn" 
-                onclick="addToCart('madawi')"
                 class="w-full px-6 py-4 rounded-full bg-brand-gold hover:bg-brand-goldDark text-brand-emeraldDark font-extrabold flex items-center justify-center gap-3 transition-all shadow-lg shadow-brand-gold/20 hover:scale-[1.02] cursor-pointer"
               >
                 <i class="fa-solid fa-cart-shopping text-xl"></i>
@@ -1011,10 +1007,11 @@
               </button>
 
               <a
-                href="/shop?product=madawi"
+                id="signature-details-link"
+                href="product.html"
                 class="w-full px-6 py-3 rounded-full bg-transparent border border-brand-gold/40 hover:border-brand-gold text-brand-gold font-semibold flex items-center justify-center gap-2 transition-all text-sm hover:bg-brand-gold/10 text-center block"
               >
-                <span>عرض تفاصيل المنتج في المتجر</span>
+                <span>عرض تفاصيل المنتج</span>
                 <i class="fa-solid fa-arrow-left text-xs"></i>
               </a>
             </div>
@@ -1022,7 +1019,6 @@
         </div>
       </div>
     </section>
-
     <!-- =========================================================
 *         SECTION 5: WHY ÉVORA?
 *    ========================================================== -->
