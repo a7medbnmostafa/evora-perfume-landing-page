@@ -39,7 +39,7 @@
   "products": [
     {
       "id": "erba-pura",
-      "image": "assets/img/erba-pura.webp",
+      "image": "https://www.santaeulalia.com/cdn/shop/files/890-000865-01_01.jpg?crop=center&height=1000&v=1744355371&width=1000",
       "name": "إيربابورا زيرجوف",
       "latin": "Erba Pura",
       "gender": "unisex",
@@ -57,7 +57,7 @@
     },
     {
       "id": "sauvage-dior",
-      "image": "assets/img/sauvage-dior.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbzKCKV_NS8f_LTw744HRchGsBafuPxO-l62LZj7VGxA&s=10",
       "name": "سوفاج ديور",
       "latin": "Sauvage",
       "gender": "men",
@@ -75,7 +75,7 @@
     },
     {
       "id": "desire-blue",
-      "image": "assets/img/desire-blue.webp",
+      "image": "https://fimgs.net/mdimg/perfume-thumbs/dark-375x500.1937.avif",
       "name": "ديزاير بلو",
       "latin": "Desire Blue",
       "gender": "men",
@@ -93,7 +93,7 @@
     },
     {
       "id": "silver-scent",
-      "image": "assets/img/silver-scent.webp",
+      "image": "../assets/img/silver.jpeg",
       "name": "سلفر سنت",
       "latin": "Silver Scent",
       "gender": "men",
@@ -111,7 +111,7 @@
     },
     {
       "id": "amir-aloud",
-      "image": "assets/img/amir-aloud.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5RhvDk4YsNv3CmDWZFpTlEflH-gcH49Fey3nHpsvVQg&s=10",
       "name": "أمير العود",
       "latin": "Amir Al Oud",
       "gender": "men",
@@ -129,7 +129,7 @@
     },
     {
       "id": "bleu-de-chanel",
-      "image": "assets/img/bleu-de-chanel.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6hvZo2oh3Z62McVPiGUu3anIsJalKZAKmeIFmRQVXdg&s=10",
       "name": "بلو دي شانيل",
       "latin": "Bleu de Chanel",
       "gender": "men",
@@ -147,7 +147,7 @@
     },
     {
       "id": "open",
-      "image": "assets/img/open.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbBaidOKcQOyJEhMb4N5sSxEh4T3PKkUfj94p5dNO1sg&s=10",
       "name": "أوبن",
       "latin": "Open",
       "gender": "unisex",
@@ -165,7 +165,7 @@
     },
     {
       "id": "madawi",
-      "image": "assets/img/midawi.jpg",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwyAaIJRxnT-2kpGnZeOOfBXLQVvlyGKUbhushZHXM0g&s=10",
       "name": "مضاوي",
       "latin": "Madawi",
       "gender": "women",
@@ -183,7 +183,7 @@
     },
     {
       "id": "bmw",
-      "image": "assets/img/bmw.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXF4YPUT1VwfkrNQuEUCMzB1jh_oFhTbbHkgZY8frexQ&s=10",
       "name": "بي إم دبليو",
       "latin": "BMW",
       "gender": "men",
@@ -201,7 +201,7 @@
     },
     {
       "id": "pacific-chill",
-      "image": "assets/img/pacific-chill.webp",
+      "image": "https://i.ebayimg.com/images/g/PhQAAeSw0AVpXvPE/s-l1600.jpg",
       "name": "باسيفيك تشيل",
       "latin": "Pacific Chill",
       "gender": "unisex",
@@ -219,7 +219,7 @@
     },
     {
       "id": "212-men",
-      "image": "assets/img/212-men.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIdS-37-ew3ghLvc1WmITlyXhFYR53AE_EiNcbWYcuUQ&s=10",
       "name": "212 مان",
       "latin": "212 Men",
       "gender": "men",
@@ -237,7 +237,7 @@
     },
     {
       "id": "al-wisam",
-      "image": "assets/img/al-wisam.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLwDHlc1ZFZh6cWGAJTvTL1g4Tznhk34sehFsVzP03Q&s=10",
       "name": "الوسام",
       "latin": "Al Wisam",
       "gender": "men",
@@ -255,7 +255,7 @@
     },
     {
       "id": "khamrah",
-      "image": "assets/img/khamrah.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVN008pCjcJL7meBSHpGkoFcmU4F41_RS3ZavCfc7Z3g&s=10",
       "name": "خمرة",
       "latin": "Khamrah",
       "gender": "unisex",
@@ -273,7 +273,7 @@
     },
     {
       "id": "khamrah-qahwa",
-      "image": "assets/img/khamrah-qahwa.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDWQBUel1SZi86XGj1ClygsPFOLJ8b3t58Qqd1IkDFKw&s=10",
       "name": "خمرة قهوة",
       "latin": "Khamrah Qahwa",
       "gender": "unisex",
@@ -291,7 +291,7 @@
     },
     {
       "id": "oud-bouquet",
-      "image": "assets/img/oud-bouquet.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu59DJgFQy69UCgyTRLsLqp-lWBNU4ySCCBpg1JFbW0Q&s=10",
       "name": "عود بوكيت",
       "latin": "Oud Bouquet",
       "gender": "unisex",
@@ -309,7 +309,7 @@
     },
     {
       "id": "oud-azraq",
-      "image": "assets/img/oud-azraq.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPHiEgrGc9RM4lwkcYgrrF-4zmknewawvLyk1b18q4oA&s=10",
       "name": "عود أزرق",
       "latin": "Oud Azraq",
       "gender": "men",
@@ -327,7 +327,7 @@
     },
     {
       "id": "ward-taif",
-      "image": "assets/img/ward-taif.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTju8W0r9MmWuOdu8h2Xf7KeMQNkOPuwVgYTj_-IUMJlg&s=10",
       "name": "ورد الطائف",
       "latin": "Ward Taif",
       "gender": "women",
@@ -345,7 +345,7 @@
     },
     {
       "id": "acqua-di-gio",
-      "image": "assets/img/acqua-di-gio.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5VC0SMO9eRNmd0BZEnyImI7W_jmU5d6d4JgyD2LvZFw&s=10",
       "name": "أكوا دي جيو",
       "latin": "Acqua di Gio",
       "gender": "men",
@@ -363,7 +363,7 @@
     },
     {
       "id": "lacoste-white",
-      "image": "assets/img/lacoste-white.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHzLoZXmEDovM0FfE_9eJ1rUMMLthm5AKK_Oqrk8_TfA&s=10",
       "name": "لاكوست وايت",
       "latin": "Lacoste White",
       "gender": "men",
@@ -381,7 +381,7 @@
     },
     {
       "id": "bianco-latte",
-      "image": "assets/img/bianco-latte.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwTLpL3sslcEMTuEcPw0RKuvpe9QuzRCXYa2Z8Kw3Ykg&s=10",
       "name": "بيانكو لاتيه",
       "latin": "Bianco Latte",
       "gender": "women",
@@ -399,7 +399,7 @@
     },
     {
       "id": "mon-blue",
-      "image": "assets/img/mon-blue.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwDOvlHW4s_ucEMFuKJf7aFm690bOsfBY_svt2rBmMjw&s=10",
       "name": "مون بلو",
       "latin": "Mon Blue",
       "gender": "women",
@@ -417,7 +417,7 @@
     },
     {
       "id": "wanted-azzaro",
-      "image": "assets/img/wanted-azzaro.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRheQaeweRe6B7z9FtVnNqrKGh5_TqNEBmbZAZjRMBTIw&s=10",
       "name": "وانتد أزارو",
       "latin": "Wanted",
       "gender": "men",
@@ -435,7 +435,7 @@
     },
     {
       "id": "hajar-aswad",
-      "image": "assets/img/hajar-aswad.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCtWN7WgSAzm-ZiiUjbqNcetfQE7GyxSw63XRfyR-yFg&s=10",
       "name": "حجر أسود",
       "latin": "Hajar Aswad",
       "gender": "unisex",
@@ -450,13 +450,10 @@
         "heart": ["العود", "الورد"],
         "base": ["العنبر", "المسك", "الأخشاب"]
       }
-      
     },
-
-
     {
       "id": "sauvage-elixir",
-      "image": "assets/img/sauvage-elixir.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUqsv9ri_4FyGdqWppULFLic51Wd-higKQtt-UejZxTA&s=10",
       "name": "سوفاج إليكسير",
       "latin": "Sauvage Elixir",
       "gender": "men",
@@ -474,7 +471,7 @@
     },
     {
       "id": "red-tobacco",
-      "image": "assets/img/red-tobacco.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHd409V5yHNgQRH8Jq6Q-hrV0zvn0NejYt-OlfbSuBOQ&s=10",
       "name": "ريد توباكو",
       "latin": "Red Tobacco",
       "gender": "men",
@@ -492,7 +489,7 @@
     },
     {
       "id": "oud-omani",
-      "image": "assets/img/oud-omani.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDKduzigRwHQsbyUAZ-xrS8-w75CL14J6v7uUMAujL4Q&s=10",
       "name": "عود عماني",
       "latin": "Oud Omani",
       "gender": "unisex",
@@ -510,7 +507,7 @@
     },
     {
       "id": "oud-kalimat",
-      "image": "assets/img/oud-kalimat.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94me6KBs_E6fhJP05CNHgsQdXQNcYR-wa8OBHZdPUYQ&s=10",
       "name": "عود كلمات",
       "latin": "Oud Kalimat",
       "gender": "unisex",
@@ -528,7 +525,7 @@
     },
     {
       "id": "one-man-show",
-      "image": "assets/img/one-man-show.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScKYhfqlGBz9p6M3KVZhhOiC1BT0ntqI8wHBzftP-diw&s=10",
       "name": "وان مان شو",
       "latin": "One Man Show",
       "gender": "men",
@@ -546,7 +543,7 @@
     },
     {
       "id": "althaer-de-marly",
-      "image": "assets/img/althaer-de-marly.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWLPx99DqWeuJKF6gcKyCbXXF0DiZdlerYivyLnjkYRQ&s=10",
       "name": "الثائر من ديمارلي",
       "latin": "Layton",
       "gender": "unisex",
@@ -564,7 +561,7 @@
     },
     {
       "id": "of-fire",
-      "image": "assets/img/of-fire.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDQV908_3qbKkklryuI-INjnTewjvyGHU4qUSBIxup2g&s=10",
       "name": "أوف فاير",
       "latin": "Of Fire",
       "gender": "unisex",
@@ -582,7 +579,7 @@
     },
     {
       "id": "yara",
-      "image": "assets/img/yara.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNBnpjX0Zf8GWUeVjIAoAGdLvxBS25h_5lRslPcJXZIw&s=10",
       "name": "يارا",
       "latin": "Yara",
       "gender": "women",
@@ -600,7 +597,7 @@
     },
     {
       "id": "yara-candy",
-      "image": "assets/img/yara-candy.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgjQ7FynZ0e6Q5VRTaXCciEWyXcEujiY0qIsluyY0Yw&s=10",
       "name": "يارا كاندي",
       "latin": "Yara Candy",
       "gender": "women",
@@ -618,7 +615,7 @@
     },
     {
       "id": "burberry-her",
-      "image": "assets/img/burberry-her.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgKBy-sr-FV9Q3TxLQ0jtHyhyFCP6UJrmO7XP1wB6CkQ&s=10",
       "name": "بربري هير",
       "latin": "Burberry Her",
       "gender": "women",
@@ -636,7 +633,7 @@
     },
     {
       "id": "paris-hilton",
-      "image": "assets/img/paris-hilton.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6hWLOSOyKe6VnR0vTOtEc4ZNNIk04J3Hw2GPNW6xBjQ&s=10",
       "name": "باريس هيلتون",
       "latin": "Paris Hilton",
       "gender": "women",
@@ -654,7 +651,7 @@
     },
     {
       "id": "nishane-hacivat",
-      "image": "assets/img/nishane-hacivat.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6hWLOSOyKe6VnR0vTOtEc4ZNNIk04J3Hw2GPNW6xBjQ&s=10",
       "name": "نيشان هاسيفات",
       "latin": "Hacivat",
       "gender": "unisex",
@@ -672,7 +669,7 @@
     },
     {
       "id": "rosendo-mateu-5",
-      "image": "assets/img/rosendo-mateu-5.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuWR9tmG4PKbn4cL5GfVZD2-blEw-O0rCCS3nRfBdXOA&s=10",
       "name": "روسيندو ماتيو 5",
       "latin": "Rosendo Mateu No. 5",
       "gender": "unisex",
@@ -690,7 +687,7 @@
     },
     {
       "id": "red-tobacco-premium",
-      "image": "assets/img/red-tobacco-premium.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU0hHCTHVdsLv8AaGlSbny_2ANVsr5G1zAEc7Y66uYiw&s=10",
       "name": "ريد توباكو بريميوم",
       "latin": "Red Tobacco Premium",
       "gender": "men",
@@ -708,7 +705,7 @@
     },
     {
       "id": "nishane-hacivat-premium",
-      "image": "assets/img/nishane-hacivat-premium.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-_24DdHYDxHgpocC2z2mmnMzXKIdoQg6cNzQElrpWfQ&s=10",
       "name": "نيشان هاسيفات بريميوم",
       "latin": "Hacivat Premium",
       "gender": "unisex",
@@ -726,7 +723,7 @@
     },
     {
       "id": "pacific-chill-premium",
-      "image": "assets/img/pacific-chill-premium.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz4QSnv8zNO1xKbJqdA3YrkTb2ae0h8MdEMgQQ_bGP-w&s=10",
       "name": "باسيفيك تشيل بريميوم",
       "latin": "Pacific Chill Premium",
       "gender": "unisex",
@@ -744,7 +741,7 @@
     },
     {
       "id": "erba-pura-premium",
-      "image": "assets/img/erba-pura-premium.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb1b0IKysDyZV9eyqSmY60mdwDTfsqpYYf4nxllFFX6Q&s=10",
       "name": "إيربابورا بريميوم",
       "latin": "Erba Pura Premium",
       "gender": "unisex",
@@ -762,7 +759,7 @@
     },
     {
       "id": "mango-mena-di",
-      "image": "assets/img/mango-mena-di.webp",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfI3lKp0o2ZUN1_M6A20lRXPzWM69ROZ3qfmuuyti2bA&s=10",
       "name": "مانجو مينا دي",
       "latin": "Mango Mena Di",
       "gender": "women",
