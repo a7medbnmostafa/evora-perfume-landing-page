@@ -79,6 +79,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     return products.find((product) => String(product.id) === String(productId));
   }
 
+  /**
+   * استرجاع عناصر السلة بعد ربطها بالمنتجات الأصلية من JSON
+   * - يدعم العناصر القديمة (بدون lineId / size / price)
+   * - يدعم العناصر الجديدة (مع lineId / size / price)
+   */
   function getCartItems() {
     const cart = getCart();
     return cart
@@ -87,8 +92,31 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!product) {
           return null;
         }
+
+        // دعم الأحجام: لو العنصر له size → حاول تلاقي السعر المخزّن أو السعر من JSON
+        const sizeMl = cartItem.size ? Number(cartItem.size) : null;
+
+        // لو العنصر فيه سعر مخزّن استخدمه، وإلا ابحث في أحجام المنتج
+        let price = Number(cartItem.price);
+        if (!price || Number.isNaN(price)) {
+          if (sizeMl && Array.isArray(product.sizes)) {
+            const sizeObj = product.sizes.find((s) => Number(s.ml) === sizeMl);
+            price = sizeObj ? Number(sizeObj.price) : Number(product.price) || 0;
+          } else {
+            price = Number(product.price) || 0;
+          }
+        }
+
+        // lineId موحّد لدعم الفصل بين الأحجام
+        const lineId =
+          cartItem.lineId ||
+          (sizeMl ? `${product.id}__${sizeMl}` : String(product.id));
+
         return {
           ...product,
+          lineId,
+          size: sizeMl,
+          price,
           qty: Math.max(1, Number(cartItem.qty) || 1),
         };
       })
@@ -160,10 +188,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       .map((item) => {
         const itemTotal = Number(item.price || 0) * Number(item.qty || 0);
 
+        // شارة الحجم (تظهر فقط لو المنتج له حجم)
+        const sizeBadge = item.size
+          ? `<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-brand-gold/10 border border-brand-gold/25 text-brand-gold text-[10px] font-bold">
+              <i class="fa-solid fa-flask text-[9px]"></i>
+              ${item.size} مل
+            </span>`
+          : "";
+
         return `
           <article
             class="cart-item group flex flex-col sm:flex-row gap-4 p-4 rounded-2xl bg-brand-emeraldDark border border-brand-gold/10"
-            data-cart-item="${escapeHTML(item.id)}"
+            data-cart-item="${escapeHTML(item.lineId)}"
           >
 
             <!-- Image -->
@@ -185,10 +221,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
               <div class="flex items-start justify-between gap-3">
 
-                <div>
+                <div class="min-w-0">
                   <a
                     href="product.html?id=${encodeURIComponent(item.id)}"
-                    class="text-lg font-bold text-white hover:text-brand-gold transition-colors"
+                    class="text-lg font-bold text-white hover:text-brand-gold transition-colors block truncate"
                   >
                     ${escapeHTML(item.name)}
                   </a>
@@ -202,11 +238,17 @@ document.addEventListener("DOMContentLoaded", async () => {
                       `
                       : ""
                   }
+
+                  ${
+                    sizeBadge
+                      ? `<div class="mt-2">${sizeBadge}</div>`
+                      : ""
+                  }
                 </div>
 
                 <button
                   type="button"
-                  data-remove-item="${escapeHTML(item.id)}"
+                  data-remove-item="${escapeHTML(item.lineId)}"
                   class="w-9 h-9 shrink-0 rounded-lg text-white/50 hover:text-red-400 hover:bg-red-500/10 transition"
                   aria-label="حذف المنتج"
                 >
@@ -224,7 +266,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                   <button
                     type="button"
-                    data-decrease-item="${escapeHTML(item.id)}"
+                    data-decrease-item="${escapeHTML(item.lineId)}"
                     class="w-10 h-10 text-white hover:bg-brand-gold/10 transition"
                     aria-label="تقليل الكمية"
                   >
@@ -233,14 +275,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                   <span
                     class="w-10 text-center text-white font-bold"
-                    data-item-quantity="${escapeHTML(item.id)}"
+                    data-item-quantity="${escapeHTML(item.lineId)}"
                   >
                     ${item.qty}
                   </span>
 
                   <button
                     type="button"
-                    data-increase-item="${escapeHTML(item.id)}"
+                    data-increase-item="${escapeHTML(item.lineId)}"
                     class="w-10 h-10 text-white hover:bg-brand-gold/10 transition"
                     aria-label="زيادة الكمية"
                   >
@@ -315,11 +357,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   // CART ACTIONS
   // =========================================================
 
-  function changeQuantity(productId, change) {
+  /**
+   * تغيير كمية عنصر باستخدام lineId (يدعم الأحجام)
+   */
+  function changeQuantity(lineId, change) {
     const cart = getCart();
-    const item = cart.find(
-      (cartItem) => String(cartItem.id) === String(productId),
-    );
+    const item = cart.find((cartItem) => {
+      const cLine =
+        cartItem.lineId ||
+        (cartItem.size
+          ? `${cartItem.id}__${cartItem.size}`
+          : String(cartItem.id));
+      return cLine === String(lineId);
+    });
 
     if (!item) {
       return;
@@ -329,7 +379,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const newQty = currentQty + change;
 
     if (newQty <= 0) {
-      removeItem(productId);
+      removeItem(lineId);
       return;
     }
 
@@ -338,11 +388,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderCart();
   }
 
-  function removeItem(productId) {
+  /**
+   * حذف عنصر باستخدام lineId
+   */
+  function removeItem(lineId) {
     const cart = getCart();
-    const newCart = cart.filter(
-      (item) => String(item.id) !== String(productId),
-    );
+    const newCart = cart.filter((item) => {
+      const cLine =
+        item.lineId ||
+        (item.size ? `${item.id}__${item.size}` : String(item.id));
+      return cLine !== String(lineId);
+    });
 
     saveCart(newCart);
     showToast("تم حذف المنتج من السلة");
@@ -425,10 +481,12 @@ document.addEventListener("DOMContentLoaded", async () => {
       0,
     );
 
+    // تفاصيل الطلب — تعرض الحجم إذا وُجد
     const orderDetails = items
       .map((item) => {
         const itemTotal = Number(item.price || 0) * Number(item.qty || 0);
-        return `• ${item.name}
+        const sizeLine = item.size ? `\n  الحجم: ${item.size} مل` : "";
+        return `• ${item.name}${sizeLine}
   ${item.qty} × ${formatPrice(item.price)} = ${formatPrice(itemTotal)} ج.م`;
       })
       .join("\n\n");

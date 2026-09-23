@@ -36,6 +36,61 @@
       "label": "Plus 80"
     }
   ],
+  "occasions": [
+    {
+      "id": "daily",
+      "label": "استخدام يومي",
+      "icon": "fa-sun",
+      "families": ["منعش", "زهري"]
+    },
+    {
+      "id": "work",
+      "label": "العمل / الرسمي",
+      "icon": "fa-briefcase",
+      "families": ["خشبي", "زهري"]
+    },
+    {
+      "id": "date",
+      "label": "موعد / رومانسي",
+      "icon": "fa-heart",
+      "families": ["حلو", "شرقي", "زهري"]
+    },
+    {
+      "id": "evening",
+      "label": "سهرة / مناسبات",
+      "icon": "fa-moon",
+      "families": ["عودي", "دخاني", "شرقي"]
+    },
+    {
+      "id": "summer",
+      "label": "صيف / انتعاش",
+      "icon": "fa-umbrella-beach",
+      "families": ["منعش", "حلو"]
+    },
+    {
+      "id": "winter",
+      "label": "شتاء / دفء",
+      "icon": "fa-snowflake",
+      "families": ["عودي", "دخاني", "حلو"]
+    }
+  ],
+  "sizes": [
+    {
+      "ml": 30,
+      "label": "30 مل",
+      "description": "حجم التجربة"
+    },
+    {
+      "ml": 50,
+      "label": "50 مل",
+      "description": "الحجم القياسي"
+    },
+    {
+      "ml": 100,
+      "label": "100 مل",
+      "description": "الحجم الاقتصادي"
+    }
+  ],
   "products": [
     {
       "id": "erba-pura",
@@ -53,7 +108,13 @@
         "top": ["البرتقال", "الليمون", "الفواكه"],
         "heart": ["الفانيليا", "المسك"],
         "base": ["العنبر", "المسك الأبيض"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 270, "sku": "ERBA-30", "inStock": true },
+        { "ml": 50, "price": 450, "sku": "ERBA-50", "inStock": true },
+        { "ml": 100, "price": 790, "sku": "ERBA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "sauvage-dior",
@@ -71,7 +132,13 @@
         "top": ["البرغموت", "الفلفل"],
         "heart": ["لافندر", "إبرة الراعي"],
         "base": ["الأمبروكسان", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 270, "sku": "SAUV-30", "inStock": true },
+        { "ml": 50, "price": 450, "sku": "SAUV-50", "inStock": true },
+        { "ml": 100, "price": 790, "sku": "SAUV-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "desire-blue",
@@ -89,7 +156,13 @@
         "top": ["الحمضيات", "الفواكه"],
         "heart": ["الأزهار", "التوابل"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 270, "sku": "DESI-30", "inStock": true },
+        { "ml": 50, "price": 450, "sku": "DESI-50", "inStock": true },
+        { "ml": 100, "price": 790, "sku": "DESI-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "silver-scent",
@@ -107,7 +180,13 @@
         "top": ["الليمون", "البرتقال"],
         "heart": ["إكليل الجبل", "جوزة الطيب"],
         "base": ["العود", "التونكا", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 270, "sku": "SILV-30", "inStock": true },
+        { "ml": 50, "price": 450, "sku": "SILV-50", "inStock": true },
+        { "ml": 100, "price": 790, "sku": "SILV-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "amir-aloud",
@@ -125,7 +204,13 @@
         "top": ["الفلفل", "الزعفران"],
         "heart": ["الورد", "العود"],
         "base": ["العنبر", "المسك", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 180, "sku": "AMIR-30", "inStock": true },
+        { "ml": 50, "price": 300, "sku": "AMIR-50", "inStock": true },
+        { "ml": 100, "price": 525, "sku": "AMIR-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "bleu-de-chanel",
@@ -143,7 +228,13 @@
         "top": ["الليمون", "الجريب فروت"],
         "heart": ["الزنجبيل", "الياسمين"],
         "base": ["الأرز", "الصندل", "البخور"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 265, "sku": "BLEU-30", "inStock": true },
+        { "ml": 50, "price": 440, "sku": "BLEU-50", "inStock": true },
+        { "ml": 100, "price": 770, "sku": "BLEU-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "open",
@@ -161,7 +252,13 @@
         "top": ["الحمضيات", "الفواكه"],
         "heart": ["الأزهار"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 275, "sku": "OPEN-30", "inStock": true },
+        { "ml": 50, "price": 460, "sku": "OPEN-50", "inStock": true },
+        { "ml": 100, "price": 805, "sku": "OPEN-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "madawi",
@@ -179,7 +276,13 @@
         "top": ["الفواكه", "الأناناس"],
         "heart": ["الياسمين", "الورد"],
         "base": ["المسك", "الفانيليا", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 150, "sku": "MADA-30", "inStock": true },
+        { "ml": 50, "price": 250, "sku": "MADA-50", "inStock": true },
+        { "ml": 100, "price": 440, "sku": "MADA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "bmw",
@@ -197,7 +300,13 @@
         "top": ["الحمضيات", "التوابل"],
         "heart": ["الأزهار", "الأخشاب"],
         "base": ["المسك", "العنبر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 390, "sku": "BMW-30", "inStock": true },
+        { "ml": 50, "price": 650, "sku": "BMW-50", "inStock": true },
+        { "ml": 100, "price": 1140, "sku": "BMW-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "pacific-chill",
@@ -215,7 +324,13 @@
         "top": ["الليمون", "الكشمش"],
         "heart": ["الفواكه", "الأعشاب"],
         "base": ["المسك", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 90, "sku": "PACI-30", "inStock": true },
+        { "ml": 50, "price": 150, "sku": "PACI-50", "inStock": true },
+        { "ml": 100, "price": 260, "sku": "PACI-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "212-men",
@@ -233,7 +348,13 @@
         "top": ["الحمضيات", "الأعشاب"],
         "heart": ["الزنجبيل", "البنفسج"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 210, "sku": "212M-30", "inStock": true },
+        { "ml": 50, "price": 350, "sku": "212M-50", "inStock": true },
+        { "ml": 100, "price": 610, "sku": "212M-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "al-wisam",
@@ -251,7 +372,13 @@
         "top": ["الحمضيات", "الفواكه"],
         "heart": ["الورد", "الأزهار"],
         "base": ["الأخشاب", "المسك", "العنبر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 65, "sku": "WISA-30", "inStock": true },
+        { "ml": 50, "price": 110, "sku": "WISA-50", "inStock": true },
+        { "ml": 100, "price": 190, "sku": "WISA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "khamrah",
@@ -269,7 +396,13 @@
         "top": ["القرفة", "البرغموت"],
         "heart": ["التمر", "البرالين"],
         "base": ["الفانيليا", "العنبر", "التونكا"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 90, "sku": "KHAM-30", "inStock": true },
+        { "ml": 50, "price": 150, "sku": "KHAM-50", "inStock": true },
+        { "ml": 100, "price": 260, "sku": "KHAM-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "khamrah-qahwa",
@@ -287,7 +420,13 @@
         "top": ["القرفة", "الهيل"],
         "heart": ["القهوة", "البرالين"],
         "base": ["الفانيليا", "المسك", "العنبر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 150, "sku": "KHQA-30", "inStock": true },
+        { "ml": 50, "price": 250, "sku": "KHQA-50", "inStock": true },
+        { "ml": 100, "price": 440, "sku": "KHQA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "oud-bouquet",
@@ -305,7 +444,13 @@
         "top": ["الفلفل", "الزعفران"],
         "heart": ["العود", "الورد"],
         "base": ["الفانيليا", "العنبر", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 85, "sku": "OUDB-30", "inStock": true },
+        { "ml": 50, "price": 140, "sku": "OUDB-50", "inStock": true },
+        { "ml": 100, "price": 245, "sku": "OUDB-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "oud-azraq",
@@ -323,7 +468,13 @@
         "top": ["التوابل", "الحمضيات"],
         "heart": ["العود", "الأخشاب"],
         "base": ["العنبر", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 390, "sku": "OUDA-30", "inStock": true },
+        { "ml": 50, "price": 650, "sku": "OUDA-50", "inStock": true },
+        { "ml": 100, "price": 1140, "sku": "OUDA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "ward-taif",
@@ -341,7 +492,13 @@
         "top": ["الورد", "الفواكه"],
         "heart": ["ورد الطائف", "الياسمين"],
         "base": ["المسك", "العنبر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 190, "sku": "WARD-30", "inStock": true },
+        { "ml": 50, "price": 320, "sku": "WARD-50", "inStock": true },
+        { "ml": 100, "price": 560, "sku": "WARD-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "acqua-di-gio",
@@ -359,7 +516,13 @@
         "top": ["الحمضيات", "النوتات البحرية"],
         "heart": ["الأعشاب", "الأزهار"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 230, "sku": "ACQU-30", "inStock": true },
+        { "ml": 50, "price": 380, "sku": "ACQU-50", "inStock": true },
+        { "ml": 100, "price": 665, "sku": "ACQU-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "lacoste-white",
@@ -377,7 +540,13 @@
         "top": ["الجريب فروت", "الليمون"],
         "heart": ["البنفسج", "الياسمين"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 205, "sku": "LACO-30", "inStock": true },
+        { "ml": 50, "price": 340, "sku": "LACO-50", "inStock": true },
+        { "ml": 100, "price": 595, "sku": "LACO-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "bianco-latte",
@@ -395,7 +564,13 @@
         "top": ["الكراميل"],
         "heart": ["العسل", "الفانيليا"],
         "base": ["المسك", "الكومارين"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 125, "sku": "BIAN-30", "inStock": true },
+        { "ml": 50, "price": 210, "sku": "BIAN-50", "inStock": true },
+        { "ml": 100, "price": 370, "sku": "BIAN-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "mon-blue",
@@ -413,7 +588,13 @@
         "top": ["الفواكه", "الحمضيات"],
         "heart": ["الزهور", "الياسمين"],
         "base": ["المسك", "الفانيليا"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 310, "sku": "MONB-30", "inStock": true },
+        { "ml": 50, "price": 520, "sku": "MONB-50", "inStock": true },
+        { "ml": 100, "price": 910, "sku": "MONB-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "wanted-azzaro",
@@ -431,7 +612,13 @@
         "top": ["الليمون", "الزنجبيل"],
         "heart": ["التوابل", "الأخشاب"],
         "base": ["التونكا", "العنبر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 85, "sku": "WANT-30", "inStock": true },
+        { "ml": 50, "price": 140, "sku": "WANT-50", "inStock": true },
+        { "ml": 100, "price": 245, "sku": "WANT-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "hajar-aswad",
@@ -449,7 +636,13 @@
         "top": ["التوابل", "الزعفران"],
         "heart": ["العود", "الورد"],
         "base": ["العنبر", "المسك", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 260, "sku": "HAJA-30", "inStock": true },
+        { "ml": 50, "price": 430, "sku": "HAJA-50", "inStock": true },
+        { "ml": 100, "price": 750, "sku": "HAJA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "sauvage-elixir",
@@ -467,7 +660,13 @@
         "top": ["القرفة", "جوزة الطيب"],
         "heart": ["لافندر", "توابل"],
         "base": ["الأخشاب", "العنبر", "العرعر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 300, "sku": "SAEL-30", "inStock": true },
+        { "ml": 50, "price": 500, "sku": "SAEL-50", "inStock": true },
+        { "ml": 100, "price": 875, "sku": "SAEL-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "red-tobacco",
@@ -485,7 +684,13 @@
         "top": ["القرفة", "الزعفران", "التبغ"],
         "heart": ["البخور", "الباتشولي"],
         "base": ["التبغ", "العنبر", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 390, "sku": "REDT-30", "inStock": true },
+        { "ml": 50, "price": 650, "sku": "REDT-50", "inStock": true },
+        { "ml": 100, "price": 1140, "sku": "REDT-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "oud-omani",
@@ -503,7 +708,13 @@
         "top": ["الزعفران", "التوابل"],
         "heart": ["العود", "الورد"],
         "base": ["العنبر", "الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 180, "sku": "OUDO-30", "inStock": true },
+        { "ml": 50, "price": 300, "sku": "OUDO-50", "inStock": true },
+        { "ml": 100, "price": 525, "sku": "OUDO-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "oud-kalimat",
@@ -521,7 +732,13 @@
         "top": ["الفواكه", "التوابل"],
         "heart": ["العود", "العسل"],
         "base": ["العنبر", "المسك", "الفانيليا"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 60, "sku": "OUDK-30", "inStock": true },
+        { "ml": 50, "price": 100, "sku": "OUDK-50", "inStock": true },
+        { "ml": 100, "price": 175, "sku": "OUDK-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "one-man-show",
@@ -539,7 +756,13 @@
         "top": ["الأعشاب", "التوابل"],
         "heart": ["الأخشاب", "الجلد"],
         "base": ["العنبر", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 120, "sku": "ONEM-30", "inStock": true },
+        { "ml": 50, "price": 200, "sku": "ONEM-50", "inStock": true },
+        { "ml": 100, "price": 350, "sku": "ONEM-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "althaer-de-marly",
@@ -557,7 +780,13 @@
         "top": ["التفاح", "البرغموت"],
         "heart": ["الياسمين", "البنفسج"],
         "base": ["الفانيليا", "الفلفل", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 330, "sku": "ALTA-30", "inStock": true },
+        { "ml": 50, "price": 550, "sku": "ALTA-50", "inStock": true },
+        { "ml": 100, "price": 960, "sku": "ALTA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "of-fire",
@@ -575,7 +804,13 @@
         "top": ["التوابل", "الحمضيات"],
         "heart": ["البخور", "الأخشاب"],
         "base": ["العنبر", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 370, "sku": "OFFI-30", "inStock": true },
+        { "ml": 50, "price": 620, "sku": "OFFI-50", "inStock": true },
+        { "ml": 100, "price": 1085, "sku": "OFFI-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "yara",
@@ -593,7 +828,13 @@
         "top": ["الفواكه", "الحمضيات"],
         "heart": ["الأزهار", "الفانيليا"],
         "base": ["المسك", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 70, "sku": "YARA-30", "inStock": true },
+        { "ml": 50, "price": 120, "sku": "YARA-50", "inStock": true },
+        { "ml": 100, "price": 210, "sku": "YARA-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "yara-candy",
@@ -611,7 +852,13 @@
         "top": ["الفواكه", "الحمضيات"],
         "heart": ["الحلوى", "الأزهار"],
         "base": ["الفانيليا", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 140, "sku": "YARC-30", "inStock": true },
+        { "ml": 50, "price": 230, "sku": "YARC-50", "inStock": true },
+        { "ml": 100, "price": 400, "sku": "YARC-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "burberry-her",
@@ -629,7 +876,13 @@
         "top": ["التوت", "الفراولة"],
         "heart": ["الياسمين", "البنفسج"],
         "base": ["المسك", "العنبر"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 70, "sku": "BURB-30", "inStock": true },
+        { "ml": 50, "price": 120, "sku": "BURB-50", "inStock": true },
+        { "ml": 100, "price": 210, "sku": "BURB-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "paris-hilton",
@@ -647,7 +900,13 @@
         "top": ["الفواكه", "الشمام"],
         "heart": ["الأزهار", "الياسمين"],
         "base": ["المسك", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 305, "sku": "PARI-30", "inStock": true },
+        { "ml": 50, "price": 510, "sku": "PARI-50", "inStock": true },
+        { "ml": 100, "price": 890, "sku": "PARI-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "nishane-hacivat",
@@ -665,7 +924,13 @@
         "top": ["الأناناس", "الجريب فروت"],
         "heart": ["الياسمين", "الباتشولي"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 140, "sku": "NISH-30", "inStock": true },
+        { "ml": 50, "price": 230, "sku": "NISH-50", "inStock": true },
+        { "ml": 100, "price": 400, "sku": "NISH-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "rosendo-mateu-5",
@@ -683,7 +948,13 @@
         "top": ["الحمضيات", "الفواكه"],
         "heart": ["الورد", "الياسمين"],
         "base": ["المسك", "العنبر", "الفانيليا"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 300, "sku": "ROSE-30", "inStock": true },
+        { "ml": 50, "price": 500, "sku": "ROSE-50", "inStock": true },
+        { "ml": 100, "price": 875, "sku": "ROSE-100", "inStock": true }
+      ],
+      "defaultSize": 50
     },
     {
       "id": "red-tobacco-premium",
@@ -701,7 +972,14 @@
         "top": ["التبغ", "القرفة", "التوابل"],
         "heart": ["البخور", "الأخشاب"],
         "base": ["العنبر", "المسك", "التبغ"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 330, "sku": "REDP-30", "inStock": true },
+        { "ml": 50, "price": 550, "sku": "REDP-50", "inStock": true },
+        { "ml": 80, "price": 550, "sku": "REDP-80", "inStock": true },
+        { "ml": 100, "price": 960, "sku": "REDP-100", "inStock": true }
+      ],
+      "defaultSize": 80
     },
     {
       "id": "nishane-hacivat-premium",
@@ -719,7 +997,14 @@
         "top": ["الأناناس", "الحمضيات"],
         "heart": ["الياسمين", "الباتشولي"],
         "base": ["الأخشاب", "المسك"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 330, "sku": "NISP-30", "inStock": true },
+        { "ml": 50, "price": 550, "sku": "NISP-50", "inStock": true },
+        { "ml": 80, "price": 550, "sku": "NISP-80", "inStock": true },
+        { "ml": 100, "price": 960, "sku": "NISP-100", "inStock": true }
+      ],
+      "defaultSize": 80
     },
     {
       "id": "pacific-chill-premium",
@@ -737,7 +1022,14 @@
         "top": ["الحمضيات", "الفواكه"],
         "heart": ["الأعشاب", "الفواكه"],
         "base": ["المسك", "الأخشاب"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 330, "sku": "PACHP-30", "inStock": true },
+        { "ml": 50, "price": 550, "sku": "PACHP-50", "inStock": true },
+        { "ml": 80, "price": 550, "sku": "PACHP-80", "inStock": true },
+        { "ml": 100, "price": 960, "sku": "PACHP-100", "inStock": true }
+      ],
+      "defaultSize": 80
     },
     {
       "id": "erba-pura-premium",
@@ -755,7 +1047,14 @@
         "top": ["الحمضيات", "الفواكه"],
         "heart": ["الفانيليا", "المسك"],
         "base": ["العنبر", "المسك الأبيض"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 330, "sku": "ERBAP-30", "inStock": true },
+        { "ml": 50, "price": 550, "sku": "ERBAP-50", "inStock": true },
+        { "ml": 80, "price": 550, "sku": "ERBAP-80", "inStock": true },
+        { "ml": 100, "price": 960, "sku": "ERBAP-100", "inStock": true }
+      ],
+      "defaultSize": 80
     },
     {
       "id": "mango-mena-di",
@@ -773,7 +1072,14 @@
         "top": ["المانجو", "الفواكه"],
         "heart": ["الأزهار"],
         "base": ["المسك", "الفانيليا"]
-      }
+      },
+      "sizes": [
+        { "ml": 30, "price": 330, "sku": "MANG-30", "inStock": true },
+        { "ml": 50, "price": 550, "sku": "MANG-50", "inStock": true },
+        { "ml": 80, "price": 550, "sku": "MANG-80", "inStock": true },
+        { "ml": 100, "price": 960, "sku": "MANG-100", "inStock": true }
+      ],
+      "defaultSize": 80
     }
   ]
 }

@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let fragranceFamilies = [];
   let genders = [];
   let tiers = [];
+  let sizesCatalog = [];
 
   try {
     const res = await fetch("data/perfumes.json", { cache: "no-store" });
@@ -48,10 +49,65 @@ document.addEventListener("DOMContentLoaded", async () => {
       : [];
     genders = Array.isArray(data.genders) ? data.genders : [];
     tiers = Array.isArray(data.tiers) ? data.tiers : [];
+    sizesCatalog = Array.isArray(data.sizes) ? data.sizes : [];
   } catch (e) {
     console.error("ÉVORA: Failed to load perfumes.json.", e);
     return;
   }
+
+  // =========================================================
+  // SIZE RESOLUTION (with fallback for legacy products)
+  // =========================================================
+
+  /**
+   * ترجع مصفوفة أحجام المنتج (مرتبة تصاعديًا).
+   * - لو المنتج فيه sizes → استخدمها
+   * - لو لأ → fallback: حجم 50 مل بسعر price القديم
+   */
+  const resolveSizes = (product) => {
+    if (!product) return [];
+    if (Array.isArray(product.sizes) && product.sizes.length) {
+      return [...product.sizes].sort((a, b) => a.ml - b.ml);
+    }
+    if (product.price != null) {
+      return [
+        {
+          ml: 50,
+          price: Number(product.price),
+          sku: `${String(product.id).toUpperCase()}-50`,
+          inStock: true,
+        },
+      ];
+    }
+    return [];
+  };
+
+  /**
+   * يرجع الحجم الافتراضي للمنتج:
+   * - defaultSize من JSON → 50 مل → أول حجم متوفر → أول حجم
+   */
+  const pickDefaultSize = (product) => {
+    const sizes = resolveSizes(product);
+    if (!sizes.length) return null;
+
+    const wanted = Number(product.defaultSize);
+    if (wanted && sizes.some((s) => s.ml === wanted)) {
+      return sizes.find((s) => s.ml === wanted);
+    }
+    if (sizes.some((s) => s.ml === 50)) {
+      return sizes.find((s) => s.ml === 50);
+    }
+    return sizes.find((s) => s.inStock !== false) || sizes[0];
+  };
+
+  /**
+   * يرجع أقل سعر متاح (للعرض في الكروت).
+   */
+  const getMinPrice = (product) => {
+    const sizes = resolveSizes(product);
+    if (!sizes.length) return Number(product.price) || 0;
+    return Math.min(...sizes.map((s) => Number(s.price) || 0));
+  };
 
   // =========================================================
   // CART
@@ -80,7 +136,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   };
 
-  const addToCart = (productId, qty = 1) => {
+  /**
+   * إضافة منتج للسلة مع دعم الحجم
+   * @param {string} productId
+   * @param {number} qty
+   * @param {object|null} size - { ml, price, sku, inStock }
+   */
+  const addToCart = (productId, qty = 1, size = null) => {
     const product = perfumeCatalog.find(
       (p) => String(p.id) === String(productId),
     );
@@ -88,15 +150,48 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.warn("ÉVORA: product not found:", productId);
       return false;
     }
+
+    const q = Math.max(1, Number(qty) || 1);
+
+    // لو مفيش حجم ممرر → اختر الحجم الافتراضي
+    const chosenSize = size || pickDefaultSize(product);
+    const sizeMl = chosenSize?.ml ?? null;
+    const sizePrice = chosenSize?.price ?? product.price ?? 0;
+    const lineId = sizeMl ? `${product.id}__${sizeMl}` : String(product.id);
+
     const cart = getCart();
-    const existing = cart.find((c) => String(c.id) === String(product.id));
-    if (existing) existing.qty += Math.max(1, Number(qty) || 1);
-    else cart.push({ id: product.id, qty: Math.max(1, Number(qty) || 1) });
+    const existing = cart.find((c) => {
+      const cLine = c.lineId || (c.size ? `${c.id}__${c.size}` : String(c.id));
+      return cLine === lineId;
+    });
+
+    if (existing) {
+      existing.qty = (Number(existing.qty) || 0) + q;
+      existing.price = sizePrice;
+      if (sizeMl) existing.size = sizeMl;
+      if (!existing.lineId) existing.lineId = lineId;
+    } else {
+      cart.push({
+        lineId,
+        id: String(product.id),
+        size: sizeMl,
+        price: sizePrice,
+        qty: q,
+      });
+    }
+
     saveCart(cart);
     return true;
   };
 
-  window.EvoraCart = { getCart, saveCart, addToCart, updateCartBadge };
+  window.EvoraCart = {
+    getCart,
+    saveCart,
+    addToCart,
+    updateCartBadge,
+    resolveSizes,
+    pickDefaultSize,
+  };
   window.addToCart = addToCart; // compat
 
   // =========================================================
@@ -180,6 +275,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const state = { step: 1, gender: null, family: null, vibe: null };
   let quizProduct = null;
+  let quizProductSize = null; // ← الحجم الافتراضي للعطر المرشح
 
   const updateQuizUI = () => {
     Object.entries(QS.steps).forEach(([n, el]) =>
@@ -313,6 +409,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
     quizProduct = product;
+    quizProductSize = pickDefaultSize(product); // ← الحجم الافتراضي
 
     Object.values(QS.steps).forEach((el) => el?.classList.add("hidden"));
     QS.result?.classList.remove("hidden");
@@ -334,14 +431,30 @@ document.addEventListener("DOMContentLoaded", async () => {
     const gLabel =
       genders.find((g) => g.id === product.gender)?.label || product.gender;
     if (QS.resultGender) QS.resultGender.textContent = gLabel;
-    if (QS.resultPrice)
-      QS.resultPrice.textContent = `${formatPrice(product.price)} ج.م`;
+
+    // عرض السعر + الحجم المختار
+    if (QS.resultPrice) {
+      const sizes = resolveSizes(product);
+      if (sizes.length > 1) {
+        QS.resultPrice.textContent = `من ${formatPrice(
+          getMinPrice(product),
+        )} ج.م`;
+      } else if (quizProductSize) {
+        QS.resultPrice.textContent = `${formatPrice(
+          quizProductSize.price,
+        )} ج.م (${quizProductSize.ml} مل)`;
+      } else {
+        QS.resultPrice.textContent = `${formatPrice(product.price)} ج.م`;
+      }
+    }
 
     if (QS.resultFamilies) {
       QS.resultFamilies.innerHTML = (product.families || [])
         .map(
           (f) =>
-            `<span class="px-2 py-1 rounded-lg bg-brand-gold/5 border border-brand-gold/10 text-brand-gold text-[11px]">${escapeAttr(f)}</span>`,
+            `<span class="px-2 py-1 rounded-lg bg-brand-gold/5 border border-brand-gold/10 text-brand-gold text-[11px]">${escapeAttr(
+              f,
+            )}</span>`,
         )
         .join("");
     }
@@ -351,8 +464,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   QS.addBtn?.addEventListener("click", () => {
     if (!quizProduct) return;
-    if (addToCart(quizProduct.id, 1))
-      showToast(`تمت إضافة ${quizProduct.name} إلى السلة`);
+    const sizeToUse = quizProductSize || pickDefaultSize(quizProduct);
+    if (addToCart(quizProduct.id, 1, sizeToUse)) {
+      const sizeLabel = sizeToUse?.ml ? ` (${sizeToUse.ml} مل)` : "";
+      showToast(`تمت إضافة ${quizProduct.name}${sizeLabel} إلى السلة`);
+    }
   });
 
   QS.restartBtn?.addEventListener("click", () => {
@@ -361,6 +477,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     state.family = null;
     state.vibe = null;
     quizProduct = null;
+    quizProductSize = null;
     document
       .querySelectorAll("#quiz .opt-btn-1, #quiz .opt-btn-2, #quiz .opt-btn-3")
       .forEach((b) => {
@@ -384,9 +501,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     bestGrid.innerHTML = list
       .map((p) => {
         const img = getProductImage(p.image);
+        const sizes = resolveSizes(p);
+        const minPrice = getMinPrice(p);
+        const hasMultipleSizes = sizes.length > 1;
+
+        // سطر السعر: "من X ج.م" لو فيه أحجام متعددة
+        const priceLine = hasMultipleSizes
+          ? `<span class="text-lg font-bold text-brand-gold">
+              <span class="text-[11px] text-brand-cream/60 font-normal mr-1">من</span>
+              ${formatPrice(minPrice)} ج.م
+            </span>`
+          : `<span class="text-lg font-bold text-brand-gold">${formatPrice(
+              minPrice,
+            )} ج.م</span>`;
+
         return `
         <article class="group relative overflow-hidden rounded-2xl bg-brand-emeraldDark border border-brand-gold/10 hover:border-brand-gold/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-          <a href="product.html?id=${encodeURIComponent(p.id)}" class="block relative aspect-[4/5] overflow-hidden">
+          <a href="product.html?id=${encodeURIComponent(
+            p.id,
+          )}" class="block relative aspect-[4/5] overflow-hidden">
             <img src="${escapeAttr(img)}" alt="${escapeAttr(p.name)}"
               class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
@@ -396,12 +529,21 @@ document.addEventListener("DOMContentLoaded", async () => {
           </a>
           <div class="p-5">
             <h3 class="text-lg font-bold text-white">${escapeAttr(p.name)}</h3>
-            <p class="text-sm text-white/40 mt-1">${escapeAttr(p.latin || "")}</p>
+            <p class="text-sm text-white/40 mt-1">${escapeAttr(
+              p.latin || "",
+            )}</p>
             <div class="flex flex-wrap gap-1.5 mt-3">
-              ${(p.families || []).map((f) => `<span class="px-2 py-1 rounded-lg bg-brand-gold/5 border border-brand-gold/10 text-brand-gold text-[11px]">${escapeAttr(f)}</span>`).join("")}
+              ${(p.families || [])
+                .map(
+                  (f) =>
+                    `<span class="px-2 py-1 rounded-lg bg-brand-gold/5 border border-brand-gold/10 text-brand-gold text-[11px]">${escapeAttr(
+                      f,
+                    )}</span>`,
+                )
+                .join("")}
             </div>
             <div class="flex items-center justify-between gap-3 mt-5">
-              <span class="text-lg font-bold text-brand-gold">${formatPrice(p.price)} ج.م</span>
+              ${priceLine}
               <div class="flex items-center gap-2">
                 <a href="product.html?id=${encodeURIComponent(p.id)}"
                   class="w-11 h-11 inline-flex items-center justify-center rounded-xl border border-brand-gold/20 text-brand-gold hover:bg-brand-gold hover:text-brand-emeraldDark transition-all"
@@ -424,7 +566,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const p = perfumeCatalog.find(
       (x) => String(x.id) === String(btn.dataset.add),
     );
-    if (p && addToCart(p.id, 1)) showToast(`تمت إضافة ${p.name} إلى السلة`);
+    if (!p) return;
+
+    const defaultSz = pickDefaultSize(p);
+    if (addToCart(p.id, 1, defaultSz)) {
+      const sizeLabel = defaultSz?.ml ? ` (${defaultSz.ml} مل)` : "";
+      showToast(`تمت إضافة ${p.name}${sizeLabel} إلى السلة`);
+    }
   });
 
   // =========================================================
@@ -462,15 +610,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     set("signature-heart-notes", (sig.notes?.heart || []).join("، "));
     set("signature-base-notes", (sig.notes?.base || []).join("، "));
 
-    // السعر
-    set("signature-price", `${formatPrice(sig.price)} ج.م`);
+    // السعر — عرض "من X ج.م" لو فيه أحجام متعددة، أو السعر المحدد لو حجم واحد
+    const sigSizes = resolveSizes(sig);
+    const minPrice = getMinPrice(sig);
+    const hasMultiple = sigSizes.length > 1;
+    set(
+      "signature-price",
+      hasMultiple
+        ? `من ${formatPrice(minPrice)} ج.م`
+        : `${formatPrice(minPrice)} ج.م`,
+    );
 
-    // زرار الإضافة للسلة
+    // زرار الإضافة للسلة — يستخدم الحجم الافتراضي
     const addBtn = document.getElementById("signature-add-btn");
     if (addBtn) {
       addBtn.onclick = () => {
-        if (addToCart(sig.id, 1))
-          showToast(`تمت إضافة ${sig.name} إلى السلة`);
+        const defaultSz = pickDefaultSize(sig);
+        if (addToCart(sig.id, 1, defaultSz)) {
+          const sizeLabel = defaultSz?.ml ? ` (${defaultSz.ml} مل)` : "";
+          showToast(`تمت إضافة ${sig.name}${sizeLabel} إلى السلة`);
+        }
       };
     }
 

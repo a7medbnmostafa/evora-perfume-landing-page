@@ -61,6 +61,17 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
+
+      /* Size button animations */
+      .size-btn {
+        transition: all 0.25s ease;
+      }
+      .size-btn:not([disabled]):hover {
+        transform: translateY(-2px);
+      }
+      .size-btn.active {
+        box-shadow: 0 0 0 1px #d4af37, 0 8px 20px -8px rgba(212, 175, 55, 0.5);
+      }
     </style>
   </head>
 
@@ -260,6 +271,10 @@
             <span class="text-sm font-semibold text-brand-cream/70"
               >جنيه مصري</span
             >
+            <span
+              id="price-per-ml"
+              class="text-[11px] text-brand-cream/40 mr-auto"
+            ></span>
           </div>
 
           <!-- Description -->
@@ -278,6 +293,38 @@
             <div id="product-families" class="flex flex-wrap gap-2">
               <!-- Dynamic tags -->
             </div>
+          </div>
+
+          <!-- =====================================================
+               SIZE SELECTOR (NEW)
+          ====================================================== -->
+          <div class="pt-2 space-y-3" id="size-selector-wrapper">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="text-xs font-bold text-brand-gold flex items-center gap-2">
+                <i class="fa-solid fa-flask text-brand-gold/80"></i>
+                <span>اختر الحجم:</span>
+              </span>
+              <span
+                id="selected-size-label"
+                class="text-[11px] text-brand-cream/60 font-medium"
+              ></span>
+            </div>
+
+            <div
+              id="size-options"
+              class="grid grid-cols-3 sm:grid-cols-4 gap-2 sm:gap-3"
+            >
+              <!-- Dynamic Size Buttons injected via JS -->
+            </div>
+
+            <!-- Stock Warning (hidden by default) -->
+            <p
+              id="size-stock-warning"
+              class="hidden text-[11px] text-red-400 flex items-center gap-1.5"
+            >
+              <i class="fa-solid fa-circle-exclamation"></i>
+              <span>هذا الحجم غير متوفر حاليًا</span>
+            </p>
           </div>
 
           <!-- Quantity & Add to Cart -->
@@ -306,6 +353,17 @@
                 >
                   +
                 </button>
+              </div>
+
+              <!-- Live total preview -->
+              <div class="mr-auto text-right">
+                <p class="text-[10px] text-brand-cream/50">الإجمالي المتوقع</p>
+                <p
+                  id="product-total-preview"
+                  class="text-base font-bold text-brand-gold"
+                >
+                  --
+                </p>
               </div>
             </div>
 
@@ -408,7 +466,7 @@
               القاعدة (Base Notes)
             </h3>
             <p class="text-xs text-brand-cream/60">
-              اللمسة الثابتة التي تدوم طويلاً
+              اللمسة الثابتة التي تدوم طويلًا
             </p>
             <div
               id="notes-base"
@@ -545,6 +603,7 @@
       <span class="text-brand-gold font-bold"> Évora for perfume </span>
     </div>
   </footer>
+
     <!-- Toast Notification Container -->
     <div
       id="toast-container"
